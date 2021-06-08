@@ -1,0 +1,99 @@
+html {
+    height: 100%;
+}
+
+body {
+    /* background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background-size: cover; */
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Poppins';
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+    transition: all .5s ease-in-out;
+}
+
+.main-logo-link:hover {
+    letter-spacing: .7px;
+}
+
+.shop-now-button {
+    background: #000000;
+    color: #f0490d;
+    min-width: 260px;
+    transition: all .5s ease-in-out;
+}
+
+.btn-black {
+    background: #000000;
+    color: white;
+    transition: all .5s ease-in-out;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus {
+    background-color: #f0490d;
+    color: #000;
+}
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid #000000 !important;
+}
+
+.border-orange {
+    border: 1px solid #f0490d !important;
+}
+
+.text-orange {
+    color: #f0490d !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
