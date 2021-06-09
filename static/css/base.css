@@ -29,7 +29,7 @@ body {
 }
 
 .main-logo-link:hover {
-    letter-spacing: .7px;
+    letter-spacing: .5px;
 }
 
 .shop-now-button {
@@ -72,6 +72,10 @@ body {
 
 .text-orange {
     color: #f0490d !important;
+}
+
+.bg-black {
+    background-color: #000 !important;
 }
 
 /* -------------------------------- Media Queries */
