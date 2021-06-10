@@ -7,12 +7,11 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
         'name',
-        'category',
         'rating',
         'image',
     )
 
-    ordering = ['sku',]
+    ordering = ['sku', ]
 
 
 class CategoryAdmin(admin.ModelAdmin):
