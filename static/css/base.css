@@ -47,6 +47,21 @@ body {
     transition: all .5s ease-in-out;
 }
 
+/* Code generated from https://www.html-code-generator.com/css/animation-generator */
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+}
+
+.spaceInUp {
+   -webkit-animation-name: spaceInUp;
+    animation-name: spaceInUp;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus {
@@ -81,6 +96,34 @@ body {
 
 .bg-black {
     background-color: #000 !important;
+}
+
+/* -------------------------------- Animations */
+
+/* Code generated from https://www.html-code-generator.com/css/animation-generator */
+@-webkit-keyframes spaceInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 0%;
+        -webkit-transform: scale(.2) translate(0%, -200%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 50% 0%;
+        -webkit-transform: scale(1) translate(0%, 0%);
+    }
+}
+@keyframes spaceInUp {
+    0% {
+        opacity: 0;
+        transform-origin: 50% 0%;
+        transform: scale(.2) translate(0%, -200%);
+    }
+    100% {
+        opacity: 1;
+        transform-origin: 50% 0%;
+        transform: scale(1) translate(0%, 0%);
+    }
 }
 
 /* -------------------------------- Media Queries */
