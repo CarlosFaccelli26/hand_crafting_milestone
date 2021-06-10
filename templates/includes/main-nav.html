@@ -18,10 +18,10 @@
                 Clothing
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item text-orange">Dream Catcher</a>
-                <a href="" class="dropdown-item text-orange">Bags</a>
-                <a href="" class="dropdown-item text-orange">Woven Wall Hanging</a>
-                <a href="" class="dropdown-item text-orange">All Thing</a>
+                <a href="{% url 'products' %}?category=dream_catcher" class="dropdown-item text-orange">Dream Catcher</a>
+                <a href="{% url 'products' %}?category=macrame_bags" class="dropdown-item text-orange">Bags</a>
+                <a href="{% url 'products' %}?category=hangwall" class="dropdown-item text-orange">Woven Wall Hanging</a>
+                <a href="{% url 'products' %}?categpry=dream_catcher,macrame_bags,hangwall" class="dropdown-item text-orange">All Thing</a>
             </div>
         </li>
 
@@ -30,9 +30,9 @@
                 Homeware
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item text-orange">Coasters</a>
-                <a href="" class="dropdown-item text-orange">Bracalets</a>
-                <a href="" class="dropdown-item text-orange">All body</a>
+                <a href="{% url 'products' %}?category=coasters" class="dropdown-item text-orange">Coasters</a>
+                <a href="{% url 'products' %}?category=macrame_bracalets" class="dropdown-item text-orange">Bracalets</a>
+                <a href="{% url 'products' %}?category=coasters,macrame_bracalets" class="dropdown-item text-orange">All body</a>
             </div>
         </li>
 
@@ -41,9 +41,9 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item text-orange">New Arrivals</a>
-                <a href="" class="dropdown-item text-orange">Deals</a>
-                <a href="" class="dropdown-item text-orange">All Specials</a>
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item text-orange">New Arrivals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item text-orange">Deals</a>
+                <a href="{% url 'products' %}?category=new_arrivals,deals" class="dropdown-item text-orange">All Specials</a>
             </div>
         </li>
     </ul>
