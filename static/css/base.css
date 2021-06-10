@@ -98,6 +98,16 @@ body {
     background-color: #000 !important;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #fff;
+    z-index: -1;
+}
+
 /* -------------------------------- Animations */
 
 /* Code generated from https://www.html-code-generator.com/css/animation-generator */
