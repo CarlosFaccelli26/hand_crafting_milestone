@@ -108,6 +108,11 @@ body {
     z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background: #f0490d !important;
+    color: #fff !important;
+}
+
 /* -------------------------------- Animations */
 
 /* Code generated from https://www.html-code-generator.com/css/animation-generator */
