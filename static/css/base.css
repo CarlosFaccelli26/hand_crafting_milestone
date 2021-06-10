@@ -33,14 +33,16 @@ body {
 }
 
 .shop-now-button {
-    background: #000000;
+    background: #000;
     color: #f0490d;
+    border: 1px solid #fff;
     min-width: 260px;
-    transition: all .5s ease-in-out;
+    position: relative;
+    transition: .5s all ease-in-out;
 }
 
-.btn-black {
-    background: #000000;
+.btn-orange {
+    background: #f0490d;
     color: white;
     transition: all .5s ease-in-out;
 }
@@ -48,14 +50,17 @@ body {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus {
+    outline: 1px solid #f0490d;
+    outline-offset: 2px;
     background-color: #f0490d;
+    border: 1px solid #fff;
     color: #000;
 }
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange:focus {
     background-color: #fff;
-    color: #000;
+    color: #f0490d;
 }
 
 .text-black {
@@ -76,6 +81,13 @@ body {
 
 .bg-black {
     background-color: #000 !important;
+}
+
+.mobile-nav-items {
+    display: flex;
+    width: calc(100% - 60px);
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* -------------------------------- Media Queries */
