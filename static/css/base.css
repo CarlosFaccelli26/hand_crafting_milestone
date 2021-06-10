@@ -83,13 +83,6 @@ body {
     background-color: #000 !important;
 }
 
-.mobile-nav-items {
-    display: flex;
-    width: calc(100% - 60px);
-    justify-content: space-around;
-    align-items: center;
-}
-
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
