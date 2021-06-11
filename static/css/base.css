@@ -47,6 +47,19 @@ body {
     transition: all .5s ease-in-out;
 }
 
+.btn-black {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: all .5s ease-in-out;
+}
+
+.btn-outline-orange {
+    background: #fff;
+    color: #f0490d !important;
+    border: 1px solid #f0490d;
+}
+
 /* Code generated from https://www.html-code-generator.com/css/animation-generator */
 .animated {
     -webkit-animation-duration: 1s;
@@ -77,6 +90,14 @@ body {
 .btn-orange:focus {
     background-color: #fff;
     color: #f0490d;
+}
+
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
 }
 
 .text-black {
