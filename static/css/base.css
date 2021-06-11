@@ -49,16 +49,16 @@ body {
 
 /* Code generated from https://www.html-code-generator.com/css/animation-generator */
 .animated {
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;
-	-webkit-animation-timing-function: ease-in-out;
-	animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
 }
 
 .spaceInUp {
-   -webkit-animation-name: spaceInUp;
+    -webkit-animation-name: spaceInUp;
     animation-name: spaceInUp;
 }
 
@@ -71,6 +71,7 @@ body {
     border: 1px solid #fff;
     color: #000;
 }
+
 .btn-orange:hover,
 .btn-orange:active,
 .btn-orange:focus {
@@ -108,9 +109,21 @@ body {
     z-index: -1;
 }
 
-a.category-badge > span.badge:hover {
+a.category-badge>span.badge:hover {
     background: #f0490d !important;
     color: #fff !important;
+}
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
 }
 
 /* -------------------------------- Animations */
@@ -122,18 +135,21 @@ a.category-badge > span.badge:hover {
         -webkit-transform-origin: 50% 0%;
         -webkit-transform: scale(.2) translate(0%, -200%);
     }
+
     100% {
         opacity: 1;
         -webkit-transform-origin: 50% 0%;
         -webkit-transform: scale(1) translate(0%, 0%);
     }
 }
+
 @keyframes spaceInUp {
     0% {
         opacity: 0;
         transform-origin: 50% 0%;
         transform: scale(.2) translate(0%, -200%);
     }
+
     100% {
         opacity: 1;
         transform-origin: 50% 0%;
@@ -145,9 +161,9 @@ a.category-badge > span.badge:hover {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* fixed top navbar only on medium and up */
