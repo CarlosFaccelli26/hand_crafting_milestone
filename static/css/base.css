@@ -58,6 +58,15 @@ body {
     background: #fff;
     color: #f0490d !important;
     border: 1px solid #f0490d;
+    transition: all .5s ease-in-out;
+}
+
+.btn-outline-orange:hover,
+.btn-outline-orange:active,
+.btn-outline-orange:focus {
+    background-color: #f0490d;
+    color: #fff !important;
+    border: 1px solid #fff;
 }
 
 /* Code generated from https://www.html-code-generator.com/css/animation-generator */
