@@ -158,6 +158,10 @@ a.category-badge>span.badge:hover {
     cursor: pointer;
 }
 
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
+
 .message-container {
     position: fixed;
     top: 72px;
@@ -261,6 +265,24 @@ a.category-badge>span.badge:hover {
     .container {
         max-width: 80%;
     }
+}
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem;
+    color: #6c757d;
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content:not[for="id_remember"] {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
 }
 
 /* fixed top navbar only on medium and up */
