@@ -1,0 +1,19 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order at The Art Kingdom. Your Order information is bellow:
+
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ oder.country }}.
+
+We've got your phone number on file as {{ order.phone_number}}.
+
+If you have any questions, feel free to contact as at {{ contact_email }}
+
+Thank you for you order!
+
+Sincerely,
+
+The Art Kingdom.
