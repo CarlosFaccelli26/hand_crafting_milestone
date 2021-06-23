@@ -15,7 +15,7 @@
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-orange mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Clothing
+                Macrame
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="{% url 'products' %}?category=dream_catcher" class="dropdown-item text-orange">Dream Catcher</a>
@@ -27,12 +27,23 @@
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-orange mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Homeware
+                Home Decor
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
                 <a href="{% url 'products' %}?category=coasters" class="dropdown-item text-orange">Coasters</a>
                 <a href="{% url 'products' %}?category=macrame_bracalets" class="dropdown-item text-orange">Bracalets</a>
                 <a href="{% url 'products' %}?category=coasters,macrame_bracalets" class="dropdown-item text-orange">All body</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-orange mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                The Perfect Gift
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
+                <a href="{% url 'products' %}?category=new_born" class="dropdown-item text-orange">New Born</a>
+                <a href="{% url 'products' %}?category=scrap_books" class="dropdown-item text-orange">Scrap Books</a>
+                <a href="{% url 'products' %}?category=new_born,scrap_books" class="dropdown-item text-orange">All Gift</a>
             </div>
         </li>
 
