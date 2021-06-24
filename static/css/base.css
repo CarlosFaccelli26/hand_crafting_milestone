@@ -115,10 +115,10 @@ body {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus {
-    outline: 1px solid #fff;
-    outline-offset: 2px;
+    outline: 1px solid #614040;
+    outline-offset: -4px;
     background-color: #efd7cf;
-    border: 1px solid #fff;
+    border: 1px solid #614040;
     color: #614040;
 }
 
