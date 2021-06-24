@@ -10,16 +10,63 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
+<div class="container-fluid h-100">
+    <section>
+        <div class="row">
+            <div class="col-12">
+                <div class="row macrame-info">
+                    <div class="col-sm-12 col-lg-7">
+                        <div class="macrame-text-description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Minima est,
+                                tempore consequatur exercitationem praesentium sunt et. Excepturi, distinctio, maiores
+                                quo,
+                                minus molestiae rem laudantium aperiam tenetur laboriosam deserunt eligendi facere
+                                dolore
+                                fugit corporis qui delectus nisi praesentium nostrum nesciunt nulla! Velit odio dicta
+                                dolorum, officia labore, aspernatur eum, porro rem neque fuga aliquam praesentium rerum.
+                                Id
+                                dolor, dicta corporis ipsam explicabo laborum totam dolore, fugiat tempora eaque amet
+                                voluptatibus quasi possimus nemo est ullam corrupti. Vero aliquam nobis quasi vitae
+                                tenetur
+                                nihil omnis accusamus similique debitis. Enim vero minus tempore architecto, obcaecati
+                                commodi. Architecto voluptates cupiditate rem perspiciatis laboriosam totam ipsam ipsa
+                                officia id dolorum odit non nemo aut tenetur assumenda facilis quasi, dolores atque et
+                                inventore explicabo autem! Quasi, non necessitatibus fugiat facilis quod molestiae
+                                perferendis dignissimos ab, debitis ipsum in ipsa! Blanditiis nulla mollitia maxime
+                                ullam
+                                architecto impedit ipsa vel, magnam voluptatum atque a iste deserunt incidunt, molestiae
+                                inventore expedita corporis cupiditate asperiores dolore laudantium nostrum consequuntur
+                                quibusdam dolorum quis? Culpa, excepturi. Sequi eius dicta impedit nisi delectus porro
+                                sit
+                                incidunt amet debitis iusto magni labore numquam officiis placeat tenetur veniam vitae
+                                magnam eaque, assumenda veritatis nulla, quibusdam iste? Itaque molestias neque impedit
+                                harum a maxime aut est.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 text-right">
+                        <a href="{% url 'products' %}?category=dream_catcher,macrame_bags,hangwall" class="btn shop-now-button animated spaceInUp btn-lg">See
+                            More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
         <div class="row h-100">
             <div class="col my-auto">
-                <h1 class="display-4 logo-font text-orange text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                <h1 class="display-4 logo-font text-orange text-center">Lorem ipsum dolor sit amet, consectetur
+                    adipisicing
+                    elit.</h1>
                 <div class="my-5 text-center">
                     <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg animated spaceInUp rounded-0 text-uppercase py-3">Shop Now</a>
+                        <a href="{% url 'products' %}"
+                            class="shop-now-button btn btn-lg rounded text-uppercase py-3">Shop
+                            Now</a>
                     </h4>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+</div>
 {% endblock %}

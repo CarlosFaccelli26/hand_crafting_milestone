@@ -2,12 +2,25 @@ html {
     height: 100%;
 }
 
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
 body {
-    background: url('/media/background-image.jpg') no-repeat center center fixed;
+    background: url('/media/background-image-1.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
     color: #555;
     font-family: 'Poppins';
+}
+
+.macrame-info {
+    background: url('/media/macrame-info.jpg') no-repeat center center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 
 /* from Bulma */
@@ -33,16 +46,31 @@ body {
 }
 
 .shop-now-button {
-    background: #000;
-    color: #f0490d;
+    background: #614040;
+    color: #efd7cf;
     border: 1px solid #fff;
-    min-width: 260px;
+    padding: .5rem 2rem;
     position: relative;
     transition: .5s all ease-in-out;
 }
 
+.macrame-text-description {
+    background-color: #decbcb6b;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.bg-brown {
+    background-color: #311919;
+}
+
+.macrame-text-description p {
+    font-size: 20px;
+    color: #1d1010;
+}
+
 .btn-orange {
-    background: #f0490d;
+    background: #5a3e33;
     color: white;
     transition: all .5s ease-in-out;
 }
@@ -89,16 +117,16 @@ body {
 .shop-now-button:focus {
     outline: 1px solid #fff;
     outline-offset: 2px;
-    background-color: #f0490d;
+    background-color: #efd7cf;
     border: 1px solid #fff;
-    color: #000;
+    color: #614040;
 }
 
 .btn-orange:hover,
 .btn-orange:active,
 .btn-orange:focus {
     background-color: #fff;
-    color: #f0490d;
+    color: #5a3e33;
 }
 
 .btn-black:hover,
@@ -122,7 +150,7 @@ body {
 }
 
 .text-orange {
-    color: #f0490d !important;
+    color: #5a4a44 !important;
 }
 
 .bg-black {
@@ -135,7 +163,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: #fff;
+    background: #e8d1c8bb;
     z-index: -1;
 }
 
