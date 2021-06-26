@@ -83,17 +83,17 @@ body {
     transition: all .5s ease-in-out;
 }
 
-.btn-outline-orange {
+.btn-outline-brown {
     background: #fff;
-    color: #f0490d !important;
-    border: 1px solid #f0490d;
+    color: #5a4a44 !important;
+    border: 1px solid #5a4a44;
     transition: all .5s ease-in-out;
 }
 
-.btn-outline-orange:hover,
-.btn-outline-orange:active,
-.btn-outline-orange:focus {
-    background-color: #f0490d;
+.btn-outline-brown:hover,
+.btn-outline-brown:active,
+.btn-outline-brown:focus {
+    background-color: #5a4a44;
     color: #fff !important;
     border: 1px solid #fff;
 }
