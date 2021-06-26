@@ -2,8 +2,8 @@
   <li class="list-inline-item">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <span><i class="fas fa-search fa-lg text-orange"></i></span>
-            <p class="my-0 text-orange">Search</p>
+            <span><i class="fas fa-search fa-lg text-brown"></i></span>
+            <p class="my-0 text-brown">Search</p>
         </div>
     </a>
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
@@ -24,28 +24,28 @@
 <li class="list-inline-item dropdown">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <span><i class="fas fa-user fa-lg text-orange"></i></span>
-            <p class="my-0 text-orange">My Account</p>
+            <span><i class="fas fa-user fa-lg text-brown"></i></span>
+            <p class="my-0 text-brown">My Account</p>
         </div>
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'add_product' %}" class="dropdown-item text-orange">Product Management</a>
+                <a href="{% url 'add_product' %}" class="dropdown-item text-brown">Product Management</a>
             {% endif %}
-            <a href="{% url 'profile' %}" class="dropdown-item text-orange">My Profile</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item text-orange">Logout</a>
+            <a href="{% url 'profile' %}" class="dropdown-item text-brown">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item text-brown">Logout</a>
         {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item text-orange">Register</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item text-orange">Login</a>
+            <a href="{% url 'account_signup' %}" class="dropdown-item text-brown">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item text-brown">Login</a>
         {% endif %}
     </div>
 </li>
 <li class="list-inline-item">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
         <div class="text-center">
-            <span><i class="fas fa-shopping-bag fa-lg text-orange"></i></span>
-            <p class="my-0 text-orange">
+            <span><i class="fas fa-shopping-bag fa-lg text-brown"></i></span>
+            <p class="my-0 text-brown">
                 {% if grand_total %}
                     ${{ grand_total|floatformat:2 }}
                 {% else %}

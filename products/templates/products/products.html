@@ -14,8 +14,8 @@
     <div class="container-fluid px-5">
         <div class="row text-center mt-3">
             <div class="col">
-                <h2 class="logo-font text-orange">Products</h2>
-                  {% for c in current_categories %}
+                <h2 class="logo-font text-brown">Products</h2>
+                  {% for c in current_categories.all %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
@@ -44,7 +44,7 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                <span class="small text-orange"><a class="text-orange" href="{% url 'products' %}">Products Home</a> | </span>
+                                <span class="small text-brown"><a class="text-brown" href="{% url 'products' %}">Products Home</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
@@ -123,7 +123,7 @@
         </div>
         <div class="btt-button shadow-sm rounded border border-orange">
             <a class="btt-link d-flex h-100">
-                <i class="fas fa-arrow-up text-orange mx-auto my-auto"></i>
+                <i class="fas fa-arrow-up text-brown mx-auto my-auto"></i>
             </a>
         </div>
     </div>

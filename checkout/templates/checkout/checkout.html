@@ -76,12 +76,12 @@
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-orange px-2 w-auto">Details</legend>
+                        <legend class="fieldset-label small text-brown px-2 w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-orange px-2 w-auto">Delivery</legend>
+                        <legend class="fieldset-label small text-brown px-2 w-auto">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
@@ -95,14 +95,14 @@
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
 							{% else %}
 								<label class="form-check-label" for="id-save-info">
-                                    <a class="text-orange" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="text-orange" href="{% url 'account_login' %}">login</a> to save this information
+                                    <a class="text-brown" href="{% url 'account_signup' %}">Create an account</a> or 
+                                    <a class="text-brown" href="{% url 'account_login' %}">login</a> to save this information
                                 </label>
 							{% endif %}
 						</div>
                     </fieldset>
                     <fieldset class="px-3">
-                        <legend class="fieldset-label small text-orange px-2 w-auto">Payment</legend>
+                        <legend class="fieldset-label small text-brown px-2 w-auto">Payment</legend>
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
                         <!-- Used to display form errors -->
@@ -120,7 +120,7 @@
 						<button id="submit-button" class="btn btn-black rounded-0">
 							<span class="font-weight-bold">Complete Order</span>
 							<span class="icon">
-								<i class="fas fa-lock text-orange"></i>
+								<i class="fas fa-lock text-brown"></i>
 							</span>
 						</button>
 						<p class="small text-danger my-0">

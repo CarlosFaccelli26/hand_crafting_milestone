@@ -37,6 +37,7 @@ body {
 }
 
 .main-logo-link {
+    color: #5a4a44;
     width: fit-content;
     transition: all .5s ease-in-out;
 }
@@ -149,7 +150,7 @@ body {
     border: 1px solid #f0490d !important;
 }
 
-.text-orange {
+.text-brown {
     color: #5a4a44 !important;
 }
 

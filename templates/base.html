@@ -41,8 +41,8 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-orange my-0">The Kingdom Art</h2>
+                <a href="{% url 'home' %}" class="nav-link main-logo-link text-brown">
+                    <h2 class="logo-font text-brown my-0">The Kingdom Art</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -64,28 +64,28 @@
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <div><i class="fas fa-user fa-lg text-orange"></i></div>
-                                <p class="my-0 text-orange">My Account</p>
+                                <div><i class="fas fa-user fa-lg text-brown"></i></div>
+                                <p class="my-0 text-brown">My Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item text-orange">Product Management</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item text-brown">Product Management</a>
                                 {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item text-orange">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item text-orange">Logout</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item text-brown">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item text-brown">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item text-orange">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item text-orange">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item text-brown">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item text-brown">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-orange font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                        <a class="{% if grand_total %}text-brown font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg text-orange"></i></div>
-                                <p class="my-0 text-orange">
+                                <div><i class="fas fa-shopping-bag fa-lg text-brown"></i></div>
+                                <p class="my-0 text-brown">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
