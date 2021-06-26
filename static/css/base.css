@@ -191,6 +191,19 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+@keyframes anim1 {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
 /* -------------------------------- Bootstrap toasts */
 
 .message-container {

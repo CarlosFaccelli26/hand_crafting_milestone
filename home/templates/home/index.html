@@ -55,13 +55,13 @@
     <section>
         <div class="row h-100">
             <div class="col my-auto">
-                <h1 class="display-4 logo-font text-brown text-center">Lorem ipsum dolor sit amet, consectetur
+                <h1 class="display-4 logo-font text-brown text-center anim">Lorem ipsum dolor sit amet, consectetur
                     adipisicing
                     elit.</h1>
-                <div class="my-5 text-center">
+                <div class="my-5 text-center anim">
                     <h4>
                         <a href="{% url 'products' %}"
-                            class="shop-now-button btn btn-lg rounded text-uppercase py-3">Shop
+                            class="shop-now-button btn btn-lg rounded text-uppercase py-3 anim">Shop
                             Now</a>
                     </h4>
                 </div>
@@ -69,4 +69,25 @@
         </div>
     </section>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script type="text/javascript">
+        const animationObserver = document.querySelector('.anim');
+        
+        observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    entry.target.style.animation = `anim1 3s forwards ease-out`;
+                    console.log('in the view');
+                }
+                else {
+                    entry.target.style.animation = 'none';
+                    console.log('out of view');
+                }
+            });
+        });
+
+        observer.observe(animationObserver);
+    </script>
 {% endblock %}
