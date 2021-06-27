@@ -23,6 +23,22 @@ body {
     justify-content: start;
 }
 
+.home-decor {
+    background: url('/media/home-decor.jpg') no-repeat center center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.perfect-gift {
+    background: url('/media/perfect-gift.jpg') no-repeat center center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
