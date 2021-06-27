@@ -99,19 +99,6 @@ body {
 }
 
 /* Code generated from https://www.html-code-generator.com/css/animation-generator */
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-}
-
-.spaceInUp {
-    -webkit-animation-name: spaceInUp;
-    animation-name: spaceInUp;
-}
 
 .shop-now-button:hover,
 .shop-now-button:active,
@@ -191,18 +178,14 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-@keyframes anim1 {
-    from {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+/* Use to trigger intersective observer animation */
+.anim {
+    opacity: 0;
 }
 
+/* .animation > .shop-now-button {
+    opacity: 0;
+} */
 
 /* -------------------------------- Bootstrap toasts */
 
@@ -319,32 +302,16 @@ input[name='q']::placeholder {
 
 /* -------------------------------- Animations */
 
-/* Code generated from https://www.html-code-generator.com/css/animation-generator */
-@-webkit-keyframes spaceInUp {
-    0% {
+/* Code taken from https://www.youtube.com/watch?v=_5Bu3JY-ZHc&t=1074s to create intersection Observer on index html */
+@keyframes anim1 {
+    from {
+        transform: translateX(100px);
         opacity: 0;
-        -webkit-transform-origin: 50% 0%;
-        -webkit-transform: scale(.2) translate(0%, -200%);
     }
 
-    100% {
+    to {
+        transform: translateX(0);
         opacity: 1;
-        -webkit-transform-origin: 50% 0%;
-        -webkit-transform: scale(1) translate(0%, 0%);
-    }
-}
-
-@keyframes spaceInUp {
-    0% {
-        opacity: 0;
-        transform-origin: 50% 0%;
-        transform: scale(.2) translate(0%, -200%);
-    }
-
-    100% {
-        opacity: 1;
-        transform-origin: 50% 0%;
-        transform: scale(1) translate(0%, 0%);
     }
 }
 

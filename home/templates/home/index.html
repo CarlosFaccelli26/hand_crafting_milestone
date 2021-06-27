@@ -16,7 +16,7 @@
             <div class="col-12">
                 <div class="row macrame-info">
                     <div class="col-sm-12 col-lg-7">
-                        <div class="macrame-text-description">
+                        <div class="macrame-text-description anim" data-delay="0.8s">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Minima est,
                                 tempore consequatur exercitationem praesentium sunt et. Excepturi, distinctio, maiores
@@ -45,23 +45,24 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-lg-3 text-right">
-                        <a href="{% url 'products' %}?category=dream_catcher,macrame_bags,hangwall" class="btn shop-now-button animated spaceInUp btn-lg">See
+                        <a href="{% url 'products' %}?category=dream_catcher,macrame_bags,hangwall"
+                            class="btn shop-now-button btn-lg anim" data-delay="1.3s">See
                             More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
-        <div class="row h-100">
+    <section class="animation">
+        <div class="row h-100 mx-auto">
             <div class="col my-auto">
-                <h1 class="display-4 logo-font text-brown text-center anim">Lorem ipsum dolor sit amet, consectetur
+                <h1 class="display-6 logo-font text-brown text-center anim" data-delay='0s'>Lorem ipsum dolor sit amet, consectetur
                     adipisicing
                     elit.</h1>
-                <div class="my-5 text-center anim">
+                <div class="my-5 text-center">
                     <h4>
                         <a href="{% url 'products' %}"
-                            class="shop-now-button btn btn-lg rounded text-uppercase py-3 anim">Shop
+                            class="shop-now-button btn btn-lg rounded text-uppercase py-3 anim" data-delay='1s'>Shop
                             Now</a>
                     </h4>
                 </div>
@@ -72,22 +73,23 @@
 {% endblock %}
 
 {% block postloadjs %}
-    <script type="text/javascript">
-        const animationObserver = document.querySelector('.anim');
-        
-        observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.intersectionRatio > 0) {
-                    entry.target.style.animation = `anim1 3s forwards ease-out`;
-                    console.log('in the view');
-                }
-                else {
-                    entry.target.style.animation = 'none';
-                    console.log('out of view');
-                }
-            });
-        });
+<script type="text/javascript">
+    const animations = document.querySelectorAll('.anim');
 
-        observer.observe(animationObserver);
-    </script>
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0) {
+                entry.target.style.animation = `anim1 2s ${entry.target.dataset.delay} forwards ease-out`;
+                observer.unobserve(entry.target);
+            }
+            else {
+                entry.target.style.animation = 'none';
+            }
+        });
+    });
+
+    animations.forEach(animation => {
+        observer.observe(animation);
+    });
+</script>
 {% endblock %}
