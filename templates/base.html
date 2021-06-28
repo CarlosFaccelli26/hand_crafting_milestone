@@ -73,7 +73,9 @@
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item text-brown">Product Management</a>
                                 {% endif %}
-                                <a href="#" class="dropdown-item text-brown" id="profile-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">My Profile</a>
+                                <a href="#" class="dropdown-item text-brown" id="profile-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">My Profile <span class="icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span></a>
                                 <ul class="list-item list-unstyled">
                                     <div class="dropdown-menu border" aria-labelledby="profile-options">
                                         <a class="dropdown-item text-brown" href="{% url 'profile' %}">Profile</a>
