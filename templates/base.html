@@ -61,6 +61,11 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    {% if request.user.is_authenticated %}
+                        <li class="d-none d-md-inline list-inline-item">
+                            <span class="text-brown">Welcome, {{ request.user|upper }}</span>
+                        </li>
+                    {% endif %}
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">

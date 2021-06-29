@@ -64,9 +64,13 @@ body {
 }
 
 .macrame-text-description {
-    background-color: #decbcb6b;
+    background-color: #5a4a4aa8;
     border-radius: 12px;
     padding: 5px;
+}
+
+.macrame-text-description p {
+    font-size: 1.5rem !important;
 }
 
 .bg-brown {
