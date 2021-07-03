@@ -9,26 +9,10 @@ section {
 }
 
 body {
-    background: url('/media/background-image-1.jpg') no-repeat center center fixed;
+    background: #fff;
     background-size: cover;
-    color: #555;
+    color: rgb(0, 0, 0);
     font-family: 'Poppins';
-}
-
-.macrame-info {
-    /* background: url('/media/macrame-info.jpg') no-repeat center center; */
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-.home-decor {
-    background: url('/media/home-decor.jpg') no-repeat center center;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: start;
 }
 
 /* from Bulma */
@@ -54,32 +38,8 @@ body {
     letter-spacing: .5px;
 }
 
-.shop-now-button {
-    background: #614040;
-    color: #efd7cf;
-    border: 1px solid #fff;
-    padding: .5rem 2rem;
-    position: relative;
-    transition: .5s all ease-in-out;
-}
-
-.macrame-text-description {
-    background-color: #5a4a4aa8;
-    border-radius: 12px;
-    padding: 5px;
-}
-
-.macrame-text-description p {
-    font-size: 1.5rem !important;
-}
-
 .bg-brown {
     background-color: #311919;
-}
-
-.macrame-text-description p {
-    font-size: 20px;
-    color: #1d1010;
 }
 
 .btn-orange {
@@ -108,18 +68,6 @@ body {
     background-color: #5a4a44;
     color: #fff !important;
     border: 1px solid #fff;
-}
-
-/* Code generated from https://www.html-code-generator.com/css/animation-generator */
-
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus {
-    outline: 1px solid #614040;
-    outline-offset: -4px;
-    background-color: #efd7cf;
-    border: 1px solid #614040;
-    color: #614040;
 }
 
 .btn-orange:hover,
@@ -157,16 +105,6 @@ body {
     background-color: #000 !important;
 }
 
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: #e8d1c8bb;
-    z-index: -1;
-}
-
 a.category-badge>span.badge:hover {
     background: #614040 !important;
     color: #fff !important;
@@ -189,15 +127,6 @@ a.category-badge>span.badge:hover {
 input[name='q']::placeholder {
     color: #aab7c4;
 }
-
-/* Use to trigger intersective observer animation */
-.anim {
-    opacity: 0;
-}
-
-/* .animation > .shop-now-button {
-    opacity: 0;
-} */
 
 /* -------------------------------- Bootstrap toasts */
 
@@ -310,21 +239,6 @@ input[name='q']::placeholder {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
-}
-
-/* -------------------------------- Animations */
-
-/* Code taken from https://www.youtube.com/watch?v=_5Bu3JY-ZHc&t=1074s to create intersection Observer on index html */
-@keyframes anim1 {
-    from {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 /* -------------------------------- Media Queries */
