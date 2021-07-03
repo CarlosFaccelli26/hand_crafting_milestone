@@ -72,6 +72,16 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+def review(request, product_id):
+    """A view to give user the ability to write a review for a product"""
+    product = get_object_or_404(Product, pk=product_id)
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'products/product_detail.html', context)
+
+
 @login_required
 def add_product(request):
     """Add a product to the store"""
