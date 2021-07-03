@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
-from .forms import ProductForm
+from .forms import ProductForm, ProductReviewForm
 
 # Create your views here.
 
@@ -62,11 +62,12 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
+    form = ProductReviewForm()
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,
+        'form': form,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -74,9 +75,24 @@ def product_detail(request, product_id):
 
 def review(request, product_id):
     """A view to give user the ability to write a review for a product"""
-    product = get_object_or_404(Product, pk=product_id)
+    
+    product = Product.objects.get(pk=product_id)
+    if request.method == 'POST':
+        form = ProductReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print(form)
+            messages.success(request, 'Review Posted.')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to post review. Please check the form is valid.')
+            return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        form = ProductReviewForm()
+
     context = {
         'product': product,
+        'form': form,
     }
 
     return render(request, 'products/product_detail.html', context)
