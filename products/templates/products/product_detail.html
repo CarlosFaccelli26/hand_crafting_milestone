@@ -97,9 +97,20 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                {% for review in product.review.all %}
-                    {{ review }}
+                <hr>
+                <p class="logo-font small text-center mb-1">Reviews</p>
+                <hr>
+                {% if reviews %}
+                {% for review in reviews %}
+                    <div class="w-75 mx-auto p-1">
+                        <p class="text-muted text-truncate"><strong>Message:</strong> {{ review.content }}</p>
+                        <p class="text-muted"><strong>Rate:</strong> {{ review.rate }}</p>
+                        <small class="text-muted"><strong>Date:</strong> {{ review.date }}</small><br>
+                        <small class="text-muted"><strong>Product:</strong> {{ review.product }}</small>
+                    </div>
+                    <hr class="w-100 mx-auto">
                 {% endfor %}
+                {% endif %}
             </div>
             <div class="col-sm-12 col-md-6">
                 <hr>

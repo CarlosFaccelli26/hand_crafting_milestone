@@ -45,7 +45,7 @@ RATE_CHOICES = [
 
 class ProductReview(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    product = models.ForeignKey('Product', on_delete=models.CASCADE, null=True)
+    product = models.ForeignKey('Product', related_name='reviews', on_delete=models.CASCADE, null=True)
     content = models.TextField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES, blank=True, null=True)
