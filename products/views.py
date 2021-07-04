@@ -77,11 +77,14 @@ def review(request, product_id):
     """A view to give user the ability to write a review for a product"""
     
     product = Product.objects.get(pk=product_id)
+    user = request.user
     if request.method == 'POST':
         form = ProductReviewForm(request.POST)
         if form.is_valid():
-            form.save()
-            print(form)
+            review = form.save()
+            review.user = user
+            review.product = product
+            review.save()
             messages.success(request, 'Review Posted.')
             return redirect(reverse('product_detail', args=[product.id]))
         else:

@@ -27,8 +27,7 @@ class ProductReviewForm(forms.ModelForm):
     class Meta:
         model = ProductReview
         fields = ('content',
-                  'rate',
-                )
+                  'rate',)
 
     content = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control form-control-sm'}), required=True)
     rate = forms.ChoiceField(choices=RATE_CHOICES, widget=forms.Select(attrs={'class': 'form-control form-control-sm'}), required=True)
