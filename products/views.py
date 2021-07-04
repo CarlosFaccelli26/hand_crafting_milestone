@@ -64,7 +64,7 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
     form = ProductReviewForm()
     product = get_object_or_404(Product, pk=product_id)
-    reviews = ProductReview.objects.all()
+    reviews = ProductReview.objects.filter(product=product_id)
 
     context = {
         'product': product,
@@ -79,7 +79,7 @@ def review(request, product_id):
     """A view to give user the ability to write a review for a product"""
     
     product = Product.objects.get(pk=product_id)
-    reviews = ProductReview.objects.all()
+    reviews = ProductReview.objects.filter(product=product_id)
     user = request.user
     if request.method == 'POST':
         form = ProductReviewForm(request.POST)
