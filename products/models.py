@@ -48,7 +48,7 @@ class ProductReview(models.Model):
     product = models.ForeignKey('Product', related_name='reviews', on_delete=models.CASCADE, null=True)
     content = models.TextField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES, blank=True, null=True)
+    rate = models.IntegerField(choices=RATE_CHOICES, blank=True, null=True)
 
     def __str__(self):
         return self.content

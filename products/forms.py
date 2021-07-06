@@ -29,7 +29,13 @@ class ProductReviewForm(forms.ModelForm):
         fields = ('content',
                   'rate',)
 
-    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control form-control-sm'}), required=True)
-    rate = forms.ChoiceField(choices=RATE_CHOICES, widget=forms.Select(attrs={'class': 'form-control form-control-sm'}), required=True)
-
+    content = forms.CharField(
+                              widget=forms.Textarea(
+                                attrs={'class': 'form-control form-control-sm'}),
+                              required=True)
+    rate = forms.ChoiceField(
+                             choices=RATE_CHOICES,
+                             widget=forms.RadioSelect(
+                                attrs={'class': 'fa fa-star'}),
+                             required=True)
 
