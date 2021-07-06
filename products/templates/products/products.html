@@ -14,13 +14,14 @@
     <div class="container-fluid px-5">
         <div class="row text-center mt-3">
             <div class="col">
+                <hr class="w-50 mb-1 mx-auto">
                 <h2 class="logo-font text-brown">Products</h2>
                   {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
-                <hr class="w-50 mb-1">
+                <hr class="w-50 mb-1 mx-auto">
             </div>
         </div>
         <div class="row">
@@ -84,8 +85,26 @@
                                         {% endif %}
                                         {% if request.user.is_superuser %}
                                             <small class="ml-3">
-                                                <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                                <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+                                                <a class="btn btn-sm btn-black" href="{% url 'edit_product' product.id %}">Edit</a>
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-sm btn-outline-brown">Delete</button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog text-white">
+                                                        <div class="modal-content bg-brown">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Some action will be made to: {{ product.name }}</h5>
+                                                                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p class="my-auto small">Are you sure you want to delete {{ product.name }}</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="modal">Close</button>
+                                                                <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-brown btn-sm">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </small>
                                         {% endif %}
                                     </div>
