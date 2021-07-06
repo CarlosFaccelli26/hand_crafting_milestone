@@ -127,7 +127,7 @@
                 <p class="logo-font small text-center mb-1">Reviews</p>
                 <hr>
                 {% if reviews %}
-                {% for review in reviews %}
+                {% for review in page_obj %}
                     <div class="w-75 mx-auto p-1">
                         <p class="text-muted text-truncate"><strong>Message:</strong> {{ review.content }}</p>
                         <p class="text-muted"><strong>Rate:</strong> {{ review.rate }} / 5</p>
@@ -140,6 +140,31 @@
                 {% else  %}
                     <p class="text-muted text-center m5">No reviews yet...</p>
                 {% endif %}
+                <ul class="w-50 mx-auto pagination">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page=1">&laquo; first</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+                            </li>
+                        {% endif %}
+                
+                            <li class="page-item">
+                                <p class="page-link">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                </p>
+                            </li>
+                
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                            </li>
+                        {% endif %}
+                </ul>
             </div>
             <div class="col-sm-12 col-md-6">
                 <hr>
