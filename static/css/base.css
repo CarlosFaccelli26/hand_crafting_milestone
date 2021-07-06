@@ -241,6 +241,10 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+.checked {
+    color: rgb(240, 240, 42);
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
