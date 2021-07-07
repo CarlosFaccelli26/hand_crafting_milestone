@@ -37,11 +37,6 @@
                             </a>
                         </p>
                     {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
-                    {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
                     <div class="rate-star my-2">
                         <i class="fa fa-star fa-sm {% if product.rate_avarage > 0 %} checked {% endif %}"></i>
@@ -49,7 +44,7 @@
                         <i class="fa fa-star fa-sm {% if product.rate_avarage > 2 %} checked {% endif %}"></i>
                         <i class="fa fa-star fa-sm {% if product.rate_avarage > 3 %} checked {% endif %}"></i>
                         <i class="fa fa-star fa-sm {% if product.rate_avarage > 4 %} checked {% endif %}"></i>
-                        <p class="text-muted"><strong>Rate:</strong> {{product.rate_avarage | stringformat:".2f"}}</p>
+                        <p class="text-muted"><strong>Rate:</strong> {{product.rate_avarage | floatformat:1}}</p>
                     </div>
                     {% if request.user.is_superuser %}
                         <small>
@@ -141,6 +136,7 @@
                     <p class="text-muted text-center m5">No reviews yet...</p>
                 {% endif %}
                 <ul class="w-50 mx-auto pagination">
+                    {% if page_obj %}
                         {% if page_obj.has_previous %}
                             <li class="page-item">
                                 <a class="page-link" href="?page=1">&laquo; first</a>
@@ -164,6 +160,7 @@
                                 <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
                             </li>
                         {% endif %}
+                    {% endif %}
                 </ul>
             </div>
             <div class="col-sm-12 col-md-6">

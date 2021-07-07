@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q, Avg
+from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
 from .models import Product, Category, ProductReview
@@ -66,7 +66,7 @@ def product_detail(request, product_id):
     form = ProductReviewForm()
     product = get_object_or_404(Product, pk=product_id)
     reviews = ProductReview.objects.filter(product=product_id)
-    paginator = Paginator(reviews, 3) # Show 3 reviews per page.
+    paginator = Paginator(reviews, 3)  # Show 3 reviews per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -105,7 +105,6 @@ def review(request, product_id):
         'product': product,
         'form': form,
         'reviews': reviews,
-        'page_obj': page_obj
     }
 
     return render(request, 'products/product_detail.html', context)
