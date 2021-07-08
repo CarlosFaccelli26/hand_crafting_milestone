@@ -1,4 +1,3 @@
-import datetime
 from django.db import models
 from django.db.models import Avg, Count
 from django.contrib.auth.models import User

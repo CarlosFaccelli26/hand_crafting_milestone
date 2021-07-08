@@ -35,7 +35,7 @@ class ProductReviewForm(forms.ModelForm):
                               required=True)
     rate = forms.ChoiceField(
                              choices=RATE_CHOICES,
-                             widget=forms.RadioSelect(
-                                attrs={'class': 'fa fa-star'}),
+                             widget=forms.Select(
+                                attrs={'class': 'form-control form-control-sm'}),
                              required=True)
 
