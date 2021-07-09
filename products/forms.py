@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Product, Category, ProductReview, RATE_CHOICES
+from .models import Product, Category, ProductReview, RATE_CHOICES, Wishlist
 
 
 class ProductForm(forms.ModelForm):
@@ -38,4 +38,10 @@ class ProductReviewForm(forms.ModelForm):
                              widget=forms.Select(
                                 attrs={'class': 'form-control form-control-sm'}),
                              required=True)
+
+
+class WishlistForm(forms.ModelForm):
+    class Meta:
+        model = Wishlist
+        fields = ('product_wish',)
 
