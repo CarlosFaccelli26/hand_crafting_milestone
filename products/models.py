@@ -49,11 +49,11 @@ class Product(models.Model):
 
 
 RATE_CHOICES = [
-    (1, '1'),
-    (2, '2'),
-    (3, '3'),
-    (4, '4'),
-    (5, '5'),
+    (1, 'Horrible'),
+    (2, 'Bad'),
+    (3, 'Good'),
+    (4, 'Very Good'),
+    (5, 'Excellent'),
 ]
 
 

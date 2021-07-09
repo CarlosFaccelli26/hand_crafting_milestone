@@ -75,6 +75,7 @@ def product_detail(request, product_id):
         'form': form,
         'reviews': reviews,
         'page_obj': page_obj,
+        'on_profile_page': True,
     }
 
     return render(request, 'products/product_detail.html', context)
