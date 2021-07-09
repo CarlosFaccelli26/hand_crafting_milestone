@@ -232,17 +232,28 @@ input[name='q']::placeholder {
 
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
-    border-color: #dc3545;
+    border-color: #614040;
 }
 
 .custom-checkbox .custom-control-input::checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: #614040;
+    border-color: #614040;
     border-radius: 0;
 }
 
 .checked {
     color: rgb(240, 240, 42);
+}
+
+.page-link {
+    color: #614040;
+    border: 1px solid #614040;
+}
+
+.page-link:hover {
+    color: #614040;
+    border: 1px solid #614040;
+    background: #e0dbdb;
 }
 
 /* -------------------------------- Media Queries */
