@@ -21,12 +21,21 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rate = models.ForeignKey('ProductReview', null=True, blank=True, on_delete=models.CASCADE, related_name='products')
+    rate = models.ForeignKey(
+        'ProductReview',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='products')
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
@@ -34,14 +43,18 @@ class Product(models.Model):
         return self.name
     
     def rate_avarage(self):
-        reviews_avarage = ProductReview.objects.filter(product=self).aggregate(avarage=Avg('rate'))
+        reviews_avarage = ProductReview.objects.filter(
+            product=self).aggregate(
+                avarage=Avg('rate'))
         avg = 0
         if reviews_avarage['avarage'] is not None:
             avg = float(reviews_avarage['avarage'])
         return avg
     
     def count_reviews(self):
-        reviews_count = ProductReview.objects.filter(product=self).aggregate(count=Count('id'))
+        reviews_count = ProductReview.objects.filter(
+            product=self).aggregate(
+                count=Count('id'))
         count = 0
         if reviews_count['count'] is not None:
             count = int(reviews_count['count'])
@@ -59,10 +72,17 @@ RATE_CHOICES = [
 
 class ProductReview(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    product = models.ForeignKey('Product', related_name='reviews', on_delete=models.CASCADE, null=True)
+    product = models.ForeignKey(
+        'Product',
+        related_name='reviews',
+        on_delete=models.CASCADE,
+        null=True)
     content = models.TextField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     rate = models.IntegerField(choices=RATE_CHOICES, blank=True, null=True)
+
+    class Meta:
+        ordering = ['-date', ]
 
     def __str__(self):
         return self.content
@@ -80,3 +100,6 @@ class Wishlist(models.Model):
 
     def __str__(self):
         return self.product_wish.name
+
+    def get_all_wishlist_item(self):
+        return self.product_wish

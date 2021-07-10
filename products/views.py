@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
-from .models import Product, Category, ProductReview
+from .models import Product, Category, ProductReview, Wishlist
 from .forms import ProductForm, ProductReviewForm
 
 # Create your views here.
@@ -75,7 +75,6 @@ def product_detail(request, product_id):
         'form': form,
         'reviews': reviews,
         'page_obj': page_obj,
-        'on_profile_page': True,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -109,6 +108,22 @@ def review(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def wishlist(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    product_wish, created = Wishlist.objects.get_or_create(
+        product_wish=product,
+        user=request.user,
+    )
+    messages.success(request, 'Added to wishlist.')
+    return redirect(reverse('product_detail', args=[product.id]))
+
+
+@login_required
+def get_wish_list_products(request):
+
+    return render(request, 'products/wishlist.html', context)
 
 
 @login_required

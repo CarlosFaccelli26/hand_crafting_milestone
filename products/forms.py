@@ -38,10 +38,3 @@ class ProductReviewForm(forms.ModelForm):
                              widget=forms.Select(
                                 attrs={'class': 'form-control form-control-sm'}),
                              required=True)
-
-
-class WishlistForm(forms.ModelForm):
-    class Meta:
-        model = Wishlist
-        fields = ('product_wish',)
-
