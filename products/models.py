@@ -90,16 +90,25 @@ class ProductReview(models.Model):
 
 class Wishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product_wish = models.ForeignKey('Product', on_delete=models.CASCADE)
-    added = models.DateTimeField(auto_now_add=True)
+    products = models.ManyToManyField(Product, through='WishlistItem')
 
     class Meta:
         verbose_name = 'Whis Lsit'
         verbose_name_plural = 'Wish Lists'
-        ordering = ['-added']
+        
+    def __str__(self):
+        return f'Wishlist ({self.user})'
+
+
+class WishlistItem(models.Model):
+    wishlist = models.ForeignKey(Wishlist, null=True, blank=True, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
+    added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Wish List Item'
+        verbose_name_plural = 'Wish lists Items'
+        ordering = ['-added', ]
 
     def __str__(self):
-        return self.product_wish.name
-
-    def get_all_wishlist_item(self):
-        return self.product_wish
+        return self.product.name

@@ -112,8 +112,8 @@ def review(request, product_id):
 
 def wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    product_wish, created = Wishlist.objects.get_or_create(
-        product_wish=product,
+    products, created = Wishlist.objects.get_or_create(
+        products=product,
         user=request.user,
     )
     messages.success(request, 'Added to wishlist.')
