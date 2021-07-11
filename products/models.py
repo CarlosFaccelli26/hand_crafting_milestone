@@ -89,8 +89,15 @@ class ProductReview(models.Model):
 
 
 class Wishlist(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product, through='WishlistItem')
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='wishlist')
+    products = models.ManyToManyField(
+        Product,
+        through='WishlistItem')
 
     class Meta:
         verbose_name = 'Whis Lsit'
@@ -101,9 +108,22 @@ class Wishlist(models.Model):
 
 
 class WishlistItem(models.Model):
-    wishlist = models.ForeignKey(Wishlist, null=True, blank=True, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
-    added = models.DateTimeField(auto_now_add=True)
+    wishlist = models.ForeignKey(
+        Wishlist,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='wishlist_items')
+    product = models.ForeignKey(
+        Product,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='wishlist_products')
+    added = models.DateTimeField(
+        auto_now_add=True,
+        null=True,
+        blank=True)
 
     class Meta:
         verbose_name = 'Wish List Item'
