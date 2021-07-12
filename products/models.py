@@ -89,46 +89,14 @@ class ProductReview(models.Model):
 
 
 class Wishlist(models.Model):
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        related_name='wishlist')
-    products = models.ManyToManyField(
-        Product,
-        through='WishlistItem')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    wish_prodcut = models.ForeignKey('Product', on_delete=models.CASCADE)
+    date_added = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Whis Lsit'
-        verbose_name_plural = 'Wish Lists'
-        
-    def __str__(self):
-        return f'Wishlist ({self.user})'
-
-
-class WishlistItem(models.Model):
-    wishlist = models.ForeignKey(
-        Wishlist,
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name='wishlist_items')
-    product = models.ForeignKey(
-        Product,
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name='wishlist_products')
-    added = models.DateTimeField(
-        auto_now_add=True,
-        null=True,
-        blank=True)
-
-    class Meta:
-        verbose_name = 'Wish List Item'
-        verbose_name_plural = 'Wish lists Items'
-        ordering = ['-added', ]
+        verbose_name = 'Wish List'
+        verbose_name_plural = 'Wishes Lists'
+        ordering = ['-date_added', ]
 
     def __str__(self):
-        return self.product.name
+        return self.wish_prodcut.name
