@@ -86,3 +86,20 @@ class ProductReview(models.Model):
 
     def __str__(self):
         return self.content
+
+
+class WishList(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    products = models.ManyToManyField(Product, through='WishListItem', related_name='products_wishlists')
+    date_added = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.user.username
+
+
+class WishListItem(models.Model):
+    wishlist = models.ForeignKey(WishList, on_delete=models.CASCADE, null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.product.name
