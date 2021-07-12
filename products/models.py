@@ -86,17 +86,3 @@ class ProductReview(models.Model):
 
     def __str__(self):
         return self.content
-
-
-class Wishlist(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    wish_prodcut = models.ForeignKey('Product', on_delete=models.CASCADE)
-    date_added = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-
-    class Meta:
-        verbose_name = 'Wish List'
-        verbose_name_plural = 'Wishes Lists'
-        ordering = ['-date_added', ]
-
-    def __str__(self):
-        return self.wish_prodcut.name
