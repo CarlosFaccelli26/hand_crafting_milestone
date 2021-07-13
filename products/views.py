@@ -111,15 +111,12 @@ def review(request, product_id):
 
 
 def add_to_wishlist(request, product_id):
-    product_wish = get_object_or_404(Product, pk=product_id)
-    products, created = WishList.objects.get_or_create(
-        products=product_wish,
+    product = get_object_or_404(Product, pk=product_id)
+    wishlist, __ = WishList.objects.get_or_create(
         user=request.user,
     )
-    if created:
-        messages.info(request, 'Added to Wishlist')
-    else:
-        messages.info(request, 'Already added to Wishlist')
+    wishlist.products.add(product)
+    messages.success(request, 'Added to Wishlist.')
 
     return redirect(reverse('product_detail', args=[product.id]))
 
