@@ -115,10 +115,17 @@ def add_to_wishlist(request, product_id):
     wishlist, __ = WishList.objects.get_or_create(
         user=request.user,
     )
-    wishlist.products.add(product)
-    messages.success(request, 'Added to Wishlist.')
 
-    return redirect(reverse('product_detail', args=[product.id]))
+    product_wish = WishList.objects.get(user= request.user)
+
+    products_count = product_wish.products.all()
+    if product in products_count:
+        messages.error(request, 'Already in Wishlist.')
+        return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        wishlist.products.add(product)
+        messages.success(request, 'Added to Wishlist.')
+        return render(request, 'products/wishlist.html')
 
 
 @login_required
