@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
-from .models import Product, Category, ProductReview, WishList
+from .models import Product, Category, ProductReview, WishList, WishListItem
 from .forms import ProductForm, ProductReviewForm
 
 # Create your views here.
@@ -116,9 +116,9 @@ def add_to_wishlist(request, product_id):
         user=request.user,
     )
 
-    product_wish = WishList.objects.get(user= request.user)
-
+    product_wish = WishList.objects.get(user=request.user)
     products_count = product_wish.products.all()
+
     if product in products_count:
         messages.error(request, 'Already in Wishlist.')
         return redirect(reverse('product_detail', args=[product.id]))
@@ -130,9 +130,12 @@ def add_to_wishlist(request, product_id):
 
 @login_required
 def wishlist(request):
-    wished_products = Wishlist.objects.all()
+    wishlist_list = WishList.objects.get(user=request.user)
+    wishlist_count = wishlist_list.products.all()
+    print(wishlist_count)
     context = {
-        'wished_products': wished_products,
+        'wishlist_list': wishlist_list,
+        'wishlist_count': wishlist_count,
     }
     return render(request, 'products/wishlist.html', context)
 

@@ -11,5 +11,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <h1>{{ wished_products }}</h1>
+    {% for wish in wishlist_count %}
+        <p>{{ wish.name }}</p>
+    {% endfor %}
 {% endblock %}
