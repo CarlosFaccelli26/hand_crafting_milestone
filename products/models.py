@@ -89,9 +89,9 @@ class ProductReview(models.Model):
 
 
 class WishList(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     products = models.ManyToManyField(Product, through='WishListItem', related_name='products_wishlists')
-    date_added = models.DateTimeField(auto_now_add=True, null=True)
+    date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.user.username

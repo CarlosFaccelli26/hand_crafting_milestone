@@ -113,7 +113,7 @@ def review(request, product_id):
 def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     wishlist, __ = WishList.objects.get_or_create(
-        user=request.user,
+        user=request.user
     )
 
     product_wish = WishList.objects.get(user=request.user)
@@ -130,9 +130,11 @@ def add_to_wishlist(request, product_id):
 
 @login_required
 def wishlist(request):
-    wishlist_list = WishList.objects.get(user=request.user)
+    wishlist_list = WishList.objects.get(
+        user=request.user
+        )
     wishlist_count = wishlist_list.products.all()
-    print(wishlist_count)
+    print(wishlist_count[0])
     context = {
         'wishlist_list': wishlist_list,
         'wishlist_count': wishlist_count,

@@ -10,8 +10,47 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    {% for wish in wishlist_count %}
-        <p>{{ wish.name }}</p>
-    {% endfor %}
+<div class="overlay"></div>
+<div class="row text-center">
+    <div class="col-12">
+        <hr class="w-50 mx-auto">
+        <h2 class="logo-font">Wish List</h2>
+        <hr class="w-50 mx-auto">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-sm-12 col-md-6">
+        <table class="table table-sm table-bordered border-black">
+            <thead>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Date</th>
+            </thead>
+            <tbody>
+                {% for wish in wishlist_count %}
+                <tr>
+                    <td>
+                        {% if wish.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-25">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}" class="w-25">
+                        {% endif %}
+                    </td>
+                    <td>
+                        <p>{{ wish.name }}</p>
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-black">
+                            Remove
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock %}
