@@ -109,9 +109,11 @@
                                                     </div>
                                                 </div>
                                             </small>
+                                            {% if request.user.is_authenticated %}
                                             <small>
                                                 <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-sm btn-outline-brown">Add to WishList</a>
                                             </small>
+                                            {% endif %}
                                         {% endif %}
                                     </div>
                                 </div>

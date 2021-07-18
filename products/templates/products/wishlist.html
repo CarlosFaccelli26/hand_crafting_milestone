@@ -18,39 +18,53 @@
         <hr class="w-50 mx-auto">
     </div>
 </div>
-<div class="row container">
-    <div class="col-sm-12 col-md-6">
-        <table class="table table-sm table-bordered border-black">
-            <thead>
-                <th>Image</th>
-                <th>Product Name</th>
-                <th>Date</th>
-            </thead>
-            <tbody>
-                {% for wish in wishlist_count %}
-                <tr>
-                    <td>
-                        {% if wish.image %}
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-25">
-                        {% else %}
-                        <img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}" class="w-25">
-                        {% endif %}
-                    </td>
-                    <td>
-                        <p>{{ wish.name }}</p>
-                    </td>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-black">
-                            Remove
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+<div class="container">
+    {% if wishlist_count %}
+    <div class="row h-100 mx-auto">
+
+        <div class="col-sm-12 col-md-6">
+            <table class="table table-sm table-bordered border-black">
+                <thead>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Date</th>
+                </thead>
+                <tbody>
+                    {% for wish in wishlist_count %}
+                    <tr>
+                        <td>
+                            {% if wish.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-25">
+                            {% else %}
+                            <img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}" class="w-25">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <p>{{ wish.name }}</p>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <a href="{% url 'remove_from_wishlist' wish.id %}" class="btn btn-sm btn-black">
+                                Remove
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
+    {% else %}
+    <div class="row h-100">
+        <div class="col-12 text-center my-auto">
+            <div class="jumbotron mx-auto">
+                <h2 class="logo-font text-center text-brown">You don't have a wishlist <a href="{% url 'products' %}"
+                        class="btn btn-outline-brown">Add</a> products to your wishlist!</h2>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

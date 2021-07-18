@@ -110,6 +110,7 @@ def review(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     wishlist, __ = WishList.objects.get_or_create(
@@ -125,7 +126,7 @@ def add_to_wishlist(request, product_id):
     else:
         wishlist.products.add(product)
         messages.success(request, 'Added to Wishlist.')
-        return render(request, 'products/wishlist.html')
+        return redirect(reverse('wishlist'))
 
 
 @login_required
@@ -134,12 +135,30 @@ def wishlist(request):
         user=request.user
         )
     wishlist_count = wishlist_list.products.all()
-    print(wishlist_count[0])
     context = {
         'wishlist_list': wishlist_list,
         'wishlist_count': wishlist_count,
     }
     return render(request, 'products/wishlist.html', context)
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    wishlist, __ = WishList.objects.get_or_create(
+        user=request.user
+    )
+
+    product_wish = WishList.objects.get(user=request.user)
+    products_count = product_wish.products.all()
+
+    if product in products_count:
+        wishlist.products.remove(product)
+        messages.success(request, 'Removed from Wishlist.')
+        return redirect(reverse('products'))
+    else:
+        messages.success(request, 'Product is not in your Wish List yet.')
+        return redirect(reverse('products'))
 
 
 @login_required
