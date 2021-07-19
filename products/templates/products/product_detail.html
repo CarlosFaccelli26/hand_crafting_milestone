@@ -136,6 +136,29 @@
                         <small class="text-muted"><strong>Product:</strong> {{ review.product }}</small><br>
                         <small class="text-muted"><strong>Date:</strong> {{ review.date }}</small><br>
                         <small class="text-muted"><strong>Posted by:</strong> {{ review.user|upper }}</small>
+                        <div class="float-right">
+                            {% if request.user.is_superuser %}
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#deletereview" class="btn btn-sm btn-outline-brown">Delete</button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="deletereview" tabindex="-1" aria-labelledby="deletereviewLabel" aria-hidden="true">
+                                    <div class="modal-dialog text-white">
+                                        <div class="modal-content bg-brown">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deletereviewLabel">Some action will be made to: {{ review.user }}</h5>
+                                                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="my-auto small">Are you sure you want to delete <strong class="text-uppercase">{{ review.user }}</strong> review?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="modal">Close</button>
+                                                <a href="{% url 'delete_review' review.id %}" class="btn btn-sm btn-outline-brown">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                     <hr class="w-100 mx-auto">
                 {% endfor %}

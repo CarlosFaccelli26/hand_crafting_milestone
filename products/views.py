@@ -111,6 +111,20 @@ def review(request, product_id):
 
 
 @login_required
+def delete_review(request, productreview_id):
+    """Delete review. Only avaialable to store owners"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+    review = get_object_or_404(ProductReview, pk=productreview_id)
+    if review:
+        review.delete()
+        messages.success(request, 'Review Deleted.')
+        return redirect(reverse('products'))
+
+
+
+@login_required
 def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     wishlist, __ = WishList.objects.get_or_create(
