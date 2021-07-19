@@ -166,13 +166,9 @@ def remove_from_wishlist(request, product_id):
     product_wish = WishList.objects.get(user=request.user)
     products_count = product_wish.products.all()
 
-    if product in products_count:
-        wishlist.products.remove(product)
-        messages.success(request, 'Removed from Wishlist.')
-        return redirect(reverse('products'))
-    else:
-        messages.success(request, 'Product is not in your Wish List yet.')
-        return redirect(reverse('products'))
+    wishlist.products.remove(product)
+    messages.success(request, 'Removed from Wishlist.')
+    return redirect('products')
 
 
 @login_required

@@ -23,7 +23,7 @@
     <div class="row h-100 mx-auto">
 
         <div class="col-sm-12 col-md-6">
-            <table class="table table-sm table-bordered border-black">
+            <table class="table table-responsive table-sm table-bordered border-black w-100">
                 <thead>
                     <th>Image</th>
                     <th>Product Name</th>
@@ -34,21 +34,24 @@
                     <tr>
                         <td>
                             {% if wish.image %}
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-25">
+                            <img src="{{ wish.image.url }}" alt="{{ product.name }}" class="w-100">
                             {% else %}
-                            <img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}" class="w-25">
+                            <img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}" class="w-100">
                             {% endif %}
                         </td>
                         <td>
                             <p>{{ wish.name }}</p>
                         </td>
                         <td>
-
+                            <p>{{ wish.price }}</p>
                         </td>
                         <td>
                             <a href="{% url 'remove_from_wishlist' wish.id %}" class="btn btn-sm btn-black">
                                 Remove
                             </a>
+                        </td>
+                        <td>
+                            <p class="d-inline-block text-truncate">{{ wish.description }}</p>
                         </td>
                     </tr>
                     {% endfor %}
