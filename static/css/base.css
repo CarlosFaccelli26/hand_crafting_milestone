@@ -256,6 +256,12 @@ input[name='q']::placeholder {
     background: #e0dbdb;
 }
 
+/* --------------------------------  WishList */
+
+.wishlist-products a:hover {
+    background-color: #ccc;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

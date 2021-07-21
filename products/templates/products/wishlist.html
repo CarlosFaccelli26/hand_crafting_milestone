@@ -23,11 +23,12 @@
     <div class="row h-100 mx-auto">
 
         <div class="col-sm-12 col-md-6">
-            <table class="table table-responsive table-sm table-bordered border-black w-100">
+            <table class="table table-hover table-responsive table-sm table-bordered border-black w-100">
                 <thead>
                     <th>Image</th>
                     <th>Product Name</th>
-                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Description</th>
                 </thead>
                 <tbody>
                     {% for wish in wishlist_count %}
@@ -43,20 +44,40 @@
                             <p>{{ wish.name }}</p>
                         </td>
                         <td>
-                            <p>{{ wish.price }}</p>
-                        </td>
-                        <td>
-                            <a href="{% url 'remove_from_wishlist' wish.id %}" class="btn btn-sm btn-black">
-                                Remove
-                            </a>
+                            <p>${{ wish.price }}</p>
                         </td>
                         <td>
                             <p class="d-inline-block text-truncate">{{ wish.description }}</p>
+                        </td>
+                        <td>
+                            <a href="{% url 'remove_from_wishlist' wish.id %}" class="btn btn-sm btn-black text-center">
+                                Remove
+                            </a>
                         </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="w-50 text-center h-100  mx-auto">
+                <ul class="list-unstyled text-center my-0 border wishlist-products">
+                    <p class="text-brown logo-font">Account</p>
+                    <hr class="w-25 mx-auto">
+                    <hr>
+                    <a class="nav-link text-brown small" href="{% url 'products' %}">
+                        <li class="list-item p-2">Home</li>
+                    </a>
+                    <hr>
+                    <a class="nav-link text-brown small" href="{% url 'profile' %}">
+                        <li class="list-item p-2">Orders</li>
+                    </a>
+                    <hr>
+                    <a class="nav-link text-brown small" href="{% url 'account_change_password' %}">
+                        <li class="list-item p-2">Change Password</li>
+                    </a>
+                </ul>
+            </div>
         </div>
     </div>
     {% else %}

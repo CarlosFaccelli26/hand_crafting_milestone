@@ -139,6 +139,7 @@ def add_to_wishlist(request, product_id):
         return redirect(reverse('product_detail', args=[product.id]))
     else:
         wishlist.products.add(product)
+        print(product)
         messages.success(request, 'Added to Wishlist.')
         return redirect(reverse('wishlist'))
 
@@ -163,12 +164,9 @@ def remove_from_wishlist(request, product_id):
         user=request.user
     )
 
-    product_wish = WishList.objects.get(user=request.user)
-    products_count = product_wish.products.all()
-
     wishlist.products.remove(product)
     messages.success(request, 'Removed from Wishlist.')
-    return redirect('products')
+    return redirect('wishlist')
 
 
 @login_required
