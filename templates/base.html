@@ -60,14 +60,14 @@
                         </div>
                     </div>
                 </form>
-                {% if request.user.is_authenticated %}
-                        <p class="small text-brown mt-1 text-center">
-                            <span class="text-brown">Welcome, {{ request.user|upper }}</span>
-                        </p>
-                {% endif %}
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-right my-0">
+                    {% if request.user.is_authenticated %}
+                        <li class="list-inline-item text-right my-0">
+                            <span class="text-brown">Welcome, {{ request.user|upper }}</span>
+                        </li>
+                    {% endif %}
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -113,7 +113,6 @@
                     </li>
                 </ul>
             </div>
-            <!-- <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div> -->
         </div>
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
