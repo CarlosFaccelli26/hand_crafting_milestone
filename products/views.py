@@ -85,19 +85,25 @@ def review(request, product_id):
     
     product = Product.objects.get(pk=product_id)
     reviews = ProductReview.objects.filter(product=product_id)
+    user_review = ProductReview.objects.filter(user=request.user)
     user = request.user
     if request.method == 'POST':
-        form = ProductReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save()
-            review.user = user
-            review.product = product
-            review.save()
-            messages.success(request, 'Review Posted.')
+        #  Check if username has review on certain product
+        if user_review:
+            messages.error(request, "You already review this product.")
             return redirect(reverse('product_detail', args=[product.id]))
-        else:
-            messages.error(request, 'Failed to post review. Please check the form is valid.')
-            return redirect(reverse('product_detail', args=[product.id]))
+        else:    
+            form = ProductReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save()
+                review.user = user
+                review.product = product
+                review.save()
+                messages.success(request, 'Review Posted.')
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(request, 'Failed to post review. Please check the form is valid.')
+                return redirect(reverse('product_detail', args=[product.id]))
     else:
         form = ProductReviewForm()
 
