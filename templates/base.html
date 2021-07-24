@@ -42,11 +42,13 @@
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <!-- Brand Logo -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'products' %}" class="nav-link main-logo-link text-brown">
                     <h2 class="logo-font text-brown my-0">The Kingdom Art</h2>
                 </a>
             </div>
+            <!-- Search -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -61,18 +63,19 @@
                     </div>
                 </form>
             </div>
+            <!-- Search -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-right my-0">
                     {% if request.user.is_authenticated %}
-                        <li class="list-inline-item text-right my-0">
-                            <span class="text-brown">Welcome, {{ request.user|upper }}</span>
+                        <li class="d-sm-none d-xl-inline-block list-inline-item text-right my-0">
+                            <span class="text-brown small">Welcome, {{ request.user|upper }}</span>
                         </li>
                     {% endif %}
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg text-brown"></i></div>
-                                <p class="my-0 text-brown">My Account</p>
+                                <p class="my-0 text-brown small">My Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -97,6 +100,7 @@
                             {% endif %}
                         </div>
                     </li>
+                    <!-- Bag -->
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-brown font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
