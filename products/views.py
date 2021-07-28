@@ -156,9 +156,13 @@ def wishlist(request):
         user=request.user
         )
     wishlist_count = wishlist_list.products.all()
+    paginator = Paginator(wishlist_count, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
         'wishlist_list': wishlist_list,
         'wishlist_count': wishlist_count,
+        'page_obj': page_obj,
     }
     return render(request, 'products/wishlist.html', context)
 

@@ -20,137 +20,180 @@
 </div>
 <div class="container-fluid">
     {% if wishlist_count %}
-    <div class="row h-100 mx-auto">
-        <div class="col-sm-12 col-md-6">
-            <div class="row">
-                <p class="text-muted text-left">You have {{ wishlist_count|length }} items in your Wish List</p>
-                {% for wish in wishlist_count %}
-                <div class="col-sm-12 col-md-4">
-                    <div class="card h-100 border-0">
-                        {% if wish.image %}
-                            <a href="{% url 'product_detail' wish.id %}">
-                                <img src="{{ wish.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
-                            </a>
-                        {% else %}
-                            <a href="{% url 'product_detail' wish.id %}">
-                                <img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}" class="card-img-top img-fluid">
-                            </a>
-                        {% endif %}
-                        <div class="card-body">
-                            <p class="mb-0">{{ wish.name }}</p>
-                        </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ wish.price }}</p>
-                                    {% if product.category %}
-                                        <p class="small mt-1 mb-0">
-                                            <a class="text-muted" href="{% url 'products' %}?category={{ wish.category.name }}">
-                                                <i class="fas fa-tag mr-1"></i>{{ wish.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                    {% endif %}
-                                        <div class="rate-star my-2">
-                                            <i class="fa fa-star fa-sm {% if wish.rate_avarage > 0 %} checked {% endif %}"></i>
-                                            <i class="fa fa-star fa-sm {% if wish.rate_avarage > 1 %} checked {% endif %}"></i>
-                                            <i class="fa fa-star fa-sm {% if wish.rate_avarage > 2 %} checked {% endif %}"></i>
-                                            <i class="fa fa-star fa-sm {% if wish.rate_avarage > 3 %} checked {% endif %}"></i>
-                                            <i class="fa fa-star fa-sm {% if wish.rate_avarage > 4 %} checked {% endif %}"></i>
-                                            <p class="text-muted"><strong>Rate:</strong> {{wish.rate_avarage | floatformat:1}}</p>
-                                        </div>
-                                    {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <a class="btn btn-sm btn-black" href="{% url 'edit_product' wish.id %}">Edit</a>
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-sm btn-outline-brown">Delete</button>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog text-white">
-                                                    <div class="modal-content bg-brown">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Some action will be made to: {{ wish.name }}</h5>
-                                                            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p class="my-auto small">Are you sure you want to delete {{ wish.name }}</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="modal">Close</button>
-                                                            <a href="{% url 'delete_product' wish.id %}" class="btn btn-outline-brown btn-sm">Delete</a>
+        <div class="row h-100 mx-auto">
+            <div class="col-sm-12 col-md-6">
+                <div class="row">
+                    <p class="text-muted text-left">You have {{ wishlist_count|length }} items in your Wish List</p>
+                    {% for wish in page_obj %}
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card h-100 border-0">
+                                {% if wish.image %}
+                                <a href="{% url 'product_detail' wish.id %}">
+                                    <img src="{{ wish.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'product_detail' wish.id %}">
+                                    <img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}"
+                                        class="card-img-top img-fluid">
+                                </a>
+                                {% endif %}
+                                <div class="card-body">
+                                    <p class="mb-0">{{ wish.name }}</p>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ wish.price }}</p>
+                                            {% if product.category %}
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted"
+                                                    href="{% url 'products' %}?category={{ wish.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ wish.category.friendly_name }}
+                                                </a>
+                                            </p>
+                                            {% endif %}
+                                            <div class="rate-star my-2">
+                                                <i
+                                                    class="fa fa-star fa-sm {% if wish.rate_avarage > 0 %} checked {% endif %}"></i>
+                                                <i
+                                                    class="fa fa-star fa-sm {% if wish.rate_avarage > 1 %} checked {% endif %}"></i>
+                                                <i
+                                                    class="fa fa-star fa-sm {% if wish.rate_avarage > 2 %} checked {% endif %}"></i>
+                                                <i
+                                                    class="fa fa-star fa-sm {% if wish.rate_avarage > 3 %} checked {% endif %}"></i>
+                                                <i
+                                                    class="fa fa-star fa-sm {% if wish.rate_avarage > 4 %} checked {% endif %}"></i>
+                                                <p class="text-muted"><strong>Rate:</strong> {{ wish.rate_avarage|floatformat:1 }}</p>
+                                            </div>
+                                            {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                                <a class="btn btn-sm btn-black" href="{% url 'edit_product' wish.id %}">Edit</a>
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                    class="btn btn-sm btn-outline-brown">Delete</button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog text-white">
+                                                        <div class="modal-content bg-brown">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Some action will
+                                                                    be made to: {{ wish.name }}</h5>
+                                                                <button type="button" class="btn-close bg-white"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p class="my-auto small">Are you sure you want to delete {{
+                                                                    wish.name }}</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-sm btn-black"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <a href="{% url 'delete_product' wish.id %}"
+                                                                    class="btn btn-outline-brown btn-sm">Delete</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </small>
-                                        {% if request.user.is_authenticated %}
-                                        <small>
-                                            <a href="{% url 'remove_from_wishlist' wish.id %}" class="text-brown ml-3 text-decoration-none">
-                                                <span class="icon"><i class="fas fa-heart fa-lg"></i></span>
-                                            </a>
-                                        </small>
-                                        {% endif %}
-                                    {% endif %}
+                                            </small>
+                                            {% endif %}
+                                            {% if request.user.is_authenticated %}
+                                            <small>
+                                                <a href="{% url 'remove_from_wishlist' wish.id %}"
+                                                    class="text-brown ml-3 text-decoration-none float-right">
+                                                    <span class="icon"><i class="fas fa-heart fa-lg"></i></span>
+                                                </a>
+                                            </small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:1 %}
-                    <div class="col-12 d-sm-none mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:2 %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:3 %}
-                    <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:3 %}
-                    <div class="col-12 d-none d-xl-block mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
 
-                {% endfor %}
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    <ul class="w-50 mx-auto pagination mt-1">
+                        {% if page_obj %}
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1">&laquo; first</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                </li>
+                            {% endif %}
+                    
+                                <li class="page-item">
+                                    <p class="page-link">
+                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                    </p>
+                                </li>
+                    
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 float-right">
+                <div class="d-none d-md-block w-50 text-center h-100  mx-auto">
+                    <ul class="list-unstyled text-center my-0 border wishlist-products p-3">
+                        <p class="text-brown logo-font">Account</p>
+                        <hr class="w-25 mx-auto">
+                        <hr>
+                        <a class="nav-link text-brown small" href="{% url 'products' %}">
+                            <li class="list-item p-2">Home</li>
+                        </a>
+                        <hr>
+                        <a class="nav-link text-brown small" href="{% url 'profile' %}">
+                            <li class="list-item p-2">Orders</li>
+                        </a>
+                        <hr>
+                        <a class="nav-link text-brown small" href="{% url 'account_change_password' %}">
+                            <li class="list-item p-2">Change Password</li>
+                        </a>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-6 float-right">
-            <div class="w-50 text-center h-100  mx-auto">
-                <ul class="list-unstyled text-center my-0 border wishlist-products p-3">
-                    <p class="text-brown logo-font">Account</p>
-                    <hr class="w-25 mx-auto">
-                    <hr>
-                    <a class="nav-link text-brown small" href="{% url 'products' %}">
-                        <li class="list-item p-2">Home</li>
-                    </a>
-                    <hr>
-                    <a class="nav-link text-brown small" href="{% url 'profile' %}">
-                        <li class="list-item p-2">Orders</li>
-                    </a>
-                    <hr>
-                    <a class="nav-link text-brown small" href="{% url 'account_change_password' %}">
-                        <li class="list-item p-2">Change Password</li>
-                    </a>
-                </ul>
-            </div>
-    </div>
-    </div>
     {% else %}
     <div class="row h-100">
-        <div class="col-sm-12 col-md-6 text-center my-auto">
-            <div class="jumbotron mx-auto">
-                <h2 class="logo-font text-center text-brown">You don't have a wishlist <br>
-                    <a href="{% url 'products' %}"
-                        class="btn btn-outline-brown mx-auto">Add</a> <br>
-                        products to your wishlist!</h2>
+        <div class="col-sm-12 col-md-8 text-center my-auto">
+            <div class="jumbotron mx-auto w-100">
+                <h2 class="text-center text-brown">You don't have a wishlist <br>
+                    <a href="{% url 'products' %}" class="text-black font-weight-bold text-decoration-none">Add</a> <br>
+                        products to your wishlist!
+                </h2>
             </div>
         </div>
-        <div class="col-sm-12 col-md-6 float-right">
-            <div class="w-50 text-center h-100  mx-auto">
+        <div class="col-sm-12 col-md-4 float-right">
+            <div class="d-none d-md-block w-50 text-center h-100  mx-auto">
                 <ul class="list-unstyled text-center my-0 border wishlist-products">
                     <p class="text-brown logo-font">Account</p>
                     <hr class="w-25 mx-auto">
@@ -168,7 +211,7 @@
                     </a>
                 </ul>
             </div>
-    </div>
+        </div>
     </div>
     {% endif %}
 </div>

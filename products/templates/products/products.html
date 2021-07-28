@@ -104,13 +104,13 @@
                                                     </div>
                                                 </div>
                                             </small>
-                                            {% if request.user.is_authenticated %}
+                                        {% endif %}
+                                        {% if request.user.is_authenticated %}
                                             <small>
-                                                <a href="{% url 'add_to_wishlist' product.id %}" class="text-brown ml-3 text-decoration-none">
+                                                <a href="{% url 'add_to_wishlist' product.id %}" class="text-brown ml-3 text-decoration-none float-right">
                                                     <span class="icon"><i class="far fa-heart fa-lg"></i></span>
                                                 </a>
                                             </small>
-                                            {% endif %}
                                         {% endif %}
                                     </div>
                                 </div>
