@@ -1,1 +1,1 @@
-web: gunicorn hand_crafting.wsgi.application
+web: gunicorn hand_crafting.wsgi:application
