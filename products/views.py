@@ -65,7 +65,6 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
     form = ProductReviewForm()
     product = get_object_or_404(Product, pk=product_id)
-    print(product)
     reviews = ProductReview.objects.filter(product=product_id)
     paginator = Paginator(reviews, 3)  # Show 3 reviews per page.
     page_number = request.GET.get('page')
