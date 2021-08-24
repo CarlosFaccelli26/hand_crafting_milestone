@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models import Avg, Count
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -41,7 +43,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def rate_avarage(self):
         reviews_avarage = ProductReview.objects.filter(
             product=self).aggregate(
@@ -50,7 +52,7 @@ class Product(models.Model):
         if reviews_avarage['avarage'] is not None:
             avg = float(reviews_avarage['avarage'])
         return avg
-    
+
     def count_reviews(self):
         reviews_count = ProductReview.objects.filter(
             product=self).aggregate(
@@ -90,11 +92,24 @@ class ProductReview(models.Model):
 
 class WishList(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product, through='WishListItem', related_name='products_wishlists')
+    products = models.ManyToManyField(Product,
+                                      through='WishListItem',
+                                      related_name='products_wishlists')
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.user.username
+
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update the user profile
+    """
+    if created:
+        WishList.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.wishlist.save()
 
 
 class WishListItem(models.Model):

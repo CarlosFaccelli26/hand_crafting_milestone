@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = (os.environ.get('DEVELOPMENT') == 'True')
 
 ALLOWED_HOSTS = ['carlos-the-kingdom-art.herokuapp.com', 'localhost']
 
@@ -181,7 +181,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'carlos-the-kingdom-art'
     AWS_S3_REGION_NAME = 'eu-west-2'

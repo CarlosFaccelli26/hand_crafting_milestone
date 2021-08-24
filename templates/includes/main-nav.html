@@ -7,7 +7,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item text-brown">By Price</a>
-                <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item text-brown">By Rating</a>
+                <a href="{% url 'products' %}?sort=rate&direction=desc" class="dropdown-item text-brown">By Rating</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item text-brown">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item text-brown">All Products</a>
             </div>
@@ -18,10 +18,10 @@
                 Macrame
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="macrame-link">
-                <a href="{% url 'products' %}?category=dream_catcher" class="dropdown-item text-brown">Dream Catcher</a>
+                <a href="{% url 'products' %}?category=summer_season" class="dropdown-item text-brown">Summer Season</a>
                 <a href="{% url 'products' %}?category=bags" class="dropdown-item text-brown">Bags</a>
                 <a href="{% url 'products' %}?category=hangwall" class="dropdown-item text-brown">Woven Wall Hanging</a>
-                <a href="{% url 'products' %}?category=dream_catcher,bags,hangwall" class="dropdown-item text-brown">All Macrame</a>
+                <a href="{% url 'products' %}?category=summer_season,bags,hangwall" class="dropdown-item text-brown">All Macrame</a>
             </div>
         </li>
 
@@ -30,9 +30,9 @@
                 Home Decor
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="decore-link">
-                <a href="{% url 'products' %}?category=coasters" class="dropdown-item text-brown">Coasters</a>
+                <a href="{% url 'products' %}?category=crowns" class="dropdown-item text-brown">Crowns</a>
                 <a href="{% url 'products' %}?category=christmas" class="dropdown-item text-brown">Christmas</a>
-                <a href="{% url 'products' %}?category=coasters,christmas" class="dropdown-item text-brown">All Decor</a>
+                <a href="{% url 'products' %}?category=crowns,christmas" class="dropdown-item text-brown">All Decor</a>
             </div>
         </li>
 
