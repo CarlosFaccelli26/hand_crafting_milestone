@@ -86,13 +86,19 @@
                                 <a href="#" class="dropdown-item text-brown" id="profile-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">My Profile <span class="icon">
                                     <i class="fas fa-chevron-down"></i>
                                 </span></a>
+                                <div class="dropdown-menu border" aria-labelledby="profile-options">
                                 <ul class="list-item list-unstyled">
-                                    <div class="dropdown-menu border" aria-labelledby="profile-options">
-                                        <a class="dropdown-item text-brown" href="{% url 'profile' %}">Profile</a>
-                                        <a class="dropdown-item text-brown" href="{% url 'account_change_password' %}">Change Password</a>
-                                        <a class="dropdown-item text-brown" href="{% url 'wishlist' %}">Wish List</a>
-                                    </div>
-                                </ul>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item text-brown" href="{% url 'profile' %}">Profile</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item text-brown" href="{% url 'account_change_password' %}">Change Password</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item text-brown" href="{% url 'wishlist' %}">Wish List</a>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item text-brown">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item text-brown">Register</a>
@@ -159,7 +165,7 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}

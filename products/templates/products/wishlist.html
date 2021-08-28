@@ -65,37 +65,6 @@
                                                     class="fa fa-star fa-sm {% if wish.rate_avarage > 4 %} checked {% endif %}"></i>
                                                 <p class="text-muted"><strong>Rate:</strong> {{ wish.rate_avarage|floatformat:1 }}</p>
                                             </div>
-                                            {% if request.user.is_superuser %}
-                                            <small class="ml-3">
-                                                <a class="btn btn-sm btn-black" href="{% url 'edit_product' wish.id %}">Edit</a>
-                                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                                    class="btn btn-sm btn-outline-brown">Delete</button>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog text-white">
-                                                        <div class="modal-content bg-brown">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Some action will
-                                                                    be made to: {{ wish.name }}</h5>
-                                                                <button type="button" class="btn-close bg-white"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p class="my-auto small">Are you sure you want to delete {{
-                                                                    wish.name }}</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-sm btn-black"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <a href="{% url 'delete_product' wish.id %}"
-                                                                    class="btn btn-outline-brown btn-sm">Delete</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </small>
-                                            {% endif %}
                                             {% if request.user.is_authenticated %}
                                             <small>
                                                 <a href="{% url 'remove_from_wishlist' wish.id %}"
@@ -163,21 +132,17 @@
             </div>
             <div class="col-sm-12 col-md-6 float-right">
                 <div class="d-none d-md-block w-50 text-center h-100  mx-auto">
-                    <ul class="list-unstyled text-center my-0 border wishlist-products p-3">
-                        <p class="text-brown logo-font">Account</p>
-                        <hr class="w-25 mx-auto">
-                        <hr>
-                        <a class="nav-link text-brown small" href="{% url 'products' %}">
-                            <li class="list-item p-2">Home</li>
-                        </a>
-                        <hr>
-                        <a class="nav-link text-brown small" href="{% url 'profile' %}">
-                            <li class="list-item p-2">Orders</li>
-                        </a>
-                        <hr>
-                        <a class="nav-link text-brown small" href="{% url 'account_change_password' %}">
-                            <li class="list-item p-2">Change Password</li>
-                        </a>
+                    <ul class="list-group text-center my-0 wishlist-products p-3">
+                        <li class="list-group-item text-brown logo-font">Account</li>
+                        <li class="list-group-item p-2">
+                            <a href="{% url 'products' %}" class="nav-link text-brown small">Products</a>
+                        </li>
+                        <li class="list-group-item p-2">
+                            <a href="{% url 'profile' %}" class="nav-link text-brown small">Profile</a>
+                        </li>
+                        <li class="list-group-item p-2">
+                            <a href="{% url 'account_change_password' %}" class="nav-link text-brown small">Change Password</a>
+                        </li>
                     </ul>
                 </div>
             </div>
