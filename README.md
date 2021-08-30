@@ -26,7 +26,6 @@ It's simple in structure but with nice contrasts of colours, wich make the websi
 
 # Technologies Used
 - Programming Lenguages
-  1. [Html]()
   2. [CSS]()
   3. [JavaScript]()
   4. [Python]()
@@ -51,7 +50,13 @@ It's simple in structure but with nice contrasts of colours, wich make the websi
   3. Send Email when users register, and when a purchase is made.
 # Testing
 1. Code Validation:
-  - Html: [View]()
+  - Html:
+     1.
+    - Products Page ![View](/screenshots/screenshots11.png)
+    - Product Detail ![View](/screenshots/screenshots12.png)
+    - Bag ![View](/screenshots/screenshots13.png)
+    - Wish List ![View](/screenshots/screenshots14.png)
+    - Order History ![View](/screenshots/screenshots16.png)
   - CSS: [View]()
   - JS: [View]()
   - Python: [View]()
