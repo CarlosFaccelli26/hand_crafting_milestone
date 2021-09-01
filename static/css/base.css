@@ -207,7 +207,7 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-.allauth-form-inner-content:not[for="id_remember"] {
+.allauth-form-inner-content:not([for="id_remember"]) {
     display: none;
 }
 
@@ -236,9 +236,9 @@ input[name='q']::placeholder {
     border-color: #614040;
 }
 
-.custom-checkbox .custom-control-input::checked~.custom-control-label::before {
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #614040;
-    border-color: #614040;
+    border-color: #fff;
     border-radius: 0;
 }
 

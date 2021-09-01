@@ -51,13 +51,17 @@ It's simple in structure but with nice contrasts of colours, wich make the websi
 # Testing
 1. Code Validation:
   - Html:
-     1.
     - Products Page ![View](/screenshots/screenshots11.png)
     - Product Detail ![View](/screenshots/screenshots12.png)
     - Bag ![View](/screenshots/screenshots13.png)
     - Wish List ![View](/screenshots/screenshots14.png)
     - Order History ![View](/screenshots/screenshots16.png)
-  - CSS: [View]()
+    - Add Product ![View](/screenshots/screenshots17.png)
+    - Edit Product ![View](/sreenshots/screenshots18.png)
+  - CSS:
+    - Base css ![View](/screenshots/screenshots19.png)
+    - Checkout css ![View](/screenshots/screenshots20.png)
+
   - JS: [View]()
   - Python: [View]()
 
