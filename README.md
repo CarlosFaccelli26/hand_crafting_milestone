@@ -129,9 +129,11 @@ The website follow a super simple structure where we play with the contrast of n
 
 1. As a User
   - As a user I expect an easy navigation experience through the website. Each link with its define purpose.
+  ![Navigation](/media/screenshots/screenshots21.png)
+  As we can see at the top of the page we encounter two navs. One will display links to access bag, account options such as log in, log out, register, wishlist and if the user is admin will add an extra link with the name of **product management** wich allows admins to add products to the store.
     * Website navigation shows simplicity at the time of surface the store. All links shows description wich will give the user a hint of what each link can do.
   - As a user I would like to register and log in just following super simple steps.
-    * For the process of register and login I used a library that works with django called [allauth](). Wich is a open source, wich means is backed by many developers who try to create a secure and simple registration process for the user.
+    * For the process of register and login I used a library that works with django called [allauth](https://www.intenct.nl/projects/django-allauth/). Wich is a open source, wich means is backed by many developers who try to create a secure and simple registration process for the user.
   - As a user I want to have access to my previous orders and purchases.
     * User will be able to see previous orders that they did in the past, since the store keep the purchase data, such as: items purchased, quantity of item purchased, etc..
   - As a user I would like to be able to add, remove and check the item from my wishlist.
