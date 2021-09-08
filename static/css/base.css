@@ -207,7 +207,7 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-.allauth-form-inner-content:not([for="id_remember"]) {
+.allauth-form-inner-content label:not([for="id_remember"]) {
     display: none;
 }
 

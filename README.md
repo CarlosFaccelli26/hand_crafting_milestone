@@ -1,28 +1,26 @@
 # The Art House
-You can see live project on the following link [Sophie's Treasures](https://carlos-the-kingdom-art.herokuapp.com/)
-As you can see, Sophie's treasures project consist in a website full of functionalities; some of them are purchase items, add and remove products from the website, create a wishlist, see previous orders...Along the website, several handmade products have been collected all together, to be sold as home decor, Diy projects or gifts. 
-The idea of this project comes from my partner's hobbies. She was an inspiration as she truely believes art and handmade items are therapy to avoid the stress and the presurre coming from the society. At the same time she taught me to give a big value to the pieces you can make by your own. She always says they are little treasures, because of that the name of the website and idea of the project. As I was looking for something new and unique I wanted to use all her pictures along the website to show the people a bit of her art through the project.
-The website follow a super simple structure where we play with the contrast of neutral colours; we created the perfect balance with some pops of colour to cacth the attention of the user. 
-
+You can see live project on the following link [The Art Kingdom](https://carlos-the-kingdom-art.herokuapp.com/)
+The Art Kingdom project consist in a website full of functionalities, some of them are purchase items, add and remove items on wihslist, see orders which have been made by the user etc...
+The prupose of the website is to collect several handmade items, all together, to sell them as home decor, diy projects or gifts. The inspiration to set up this project it comes from  my partner's hobbies. She truely believes art and handmade items are therapy to avoid the pressure and the stress is around us in the society. At the same time she gives a big value to the pieces you can make by your own. She always says they are little treasures. Because of that I strongly believe It will be a nice idea to show a bit of her art and share with the others throught this project. All the products pictures have been taken by her, however there are some pictures along the project, which being taken from a website called [PixaBay]().
+As you can see all the website has a super simple structure where we play with the contrasts of neutral colours, giving the website the perfect balance and attractive appearance to catch up the attention of the user.
 # User Stories
 1. As a User
-  - As a user I expect an easy navigation experience through the website.     Each link with its define purpose.
-  - As a user I would like to register and log in just following super simple steps. 
-  - As a user I want to have access to my previous orders and purchases.  
-  - As a user I would like to be able to add, remove and check the item from my wishlist.
-  - As a user It want to add some comments below the product to give my personal opinion.
+  - As a user It will be nice to have an easy navigation experience.  Each link with its define purpose.
+  - As a user I expect the process of registration and log in simple and easy.
+  - As a user I would like to be able to see the record of my previous purchases.
+  - As a user I want to have the possibility to add, remove or read items being in my wishlist.
+  - As a user It will be a good option to be able to add a coment below the products.
 2. As a owner
-  - As a owner I want to assure an amazing and easy navigation experience to the user. 
-  - As a owner I have to be able to send a message notification to confirm the user he completed his registration form corrcetly.
-  - As a owner I want to have the possibility to control the hate-speech, being able to delete the post or coments If they go against the comunity rules of the website. 
-  - As a owner I need to add, edit or delete some products when they may be out of stock or sold out. 
-
+  - As a owner It will be mandatory to be able to send messages once the user finish the registration form to confirm the procedure.
+  - As a owner I would like to have the posibility to delete any post contained of hate-speech, or inappropiate content. 
+  - As a owner I need to be able to add, edit and delete products when they may be out of stock or sold out.
+  - As a owner I really want to assure the user an amazing navigate experience. 
 
 # Design
 1. Color Scheme
-  - As you can see in this project, we move on from the basic colours (orange, blanck and grey). Main colours used along this project are following the neutral palette (brown, beige, white, cream...) However, you can see some black to give a pop up to the website with the goal to create a catching layout.
+  - As you can see in this project I wanted to move on from the black, orange and grey. Main colours used throught the webiste are more neutrals like beige, white or brown. However you can see some black colour to create a catching layout all together. 
 2. Typography
-  - Main font used along the website is Poppins.
+  - Main font have been used along this project is, Poppins.
 3. Wireframs
   - Desktop - [View]()
   - Mobile - [View]()
@@ -71,15 +69,12 @@ The website follow a super simple structure where we play with the contrast of n
 - Screenshots
 1.
 ![Home Page](/screenshots/screenshots1.png)
-  - As we can see, once the user open the browser, the first page to pop up it will be home page. This page characterize by the simplicity and the balance between colours and items, contains all the products of the store. If the user move to the top, he will find the navbar, which allow him to navigate through the website. Meanwhile the user is surfing the website, he will be able to register, log in or log out; at the same time he can add products to his wishlist in the case he owns one. 
-  However, If we talk about the Admin; once he is log in, an additional link to add a product to the store it will appear. This procedure will be explained on detail later on.
-  Below the navbar, we can see how a second navbar appears in the website. Thanks to this navbar, the user will be able to see all the categories which classify the different products available on the store. The distribution of the products have been made in four main categories (Macrame, home decor, the perfect gift and special offers); each link will display a submenu with more categories inside of that specific link. 
-  It is mandatory to explain, the previous two navbars will be visible through all the webiste with the purpoe to assure the usser an easy navigation experience. The user will have the ability to surface faster with no need to go back to the previous page.
-  Moving on from the navbars, we can see how just below these two, there is a display of all the products available on the store at that moment. Each product display the price, name and description, image of the item, the category the product belongs, and of course, the rate if that item has one. 
-  To make the navigation eassier, the user will be able to sort the search of the product by name, price, category and rate. 
-  However rate is not cworking properly; definitely it will be something to work out and improve in the near future. 
-  If the user scroll down he will find a black arrow just on the right corner from the botton of the page. This control lead the user back to the top of the page faster. This button is just visible on the home page. 
-  
+  - As we can see, once the user open the browser the first page to pop up It will be 'home page'. This page characterize because of the background image, contains all the products of the store. If the user move to the top, he will find the navbar which allow him to navigate through the website. Meanwhile the user is surfing the website, he will be able to register, log in, log out at the same time he can add products to his  wishlist in the case he owns one. However, If we talk about the Admin; once he is log in, an additional link to add a product to the store it will appear. This procedure will be explained on detail later on. 
+  Below the navbar we can see how a second navbar appears on the game. Thanks to this navbar, the user will be able to see all the categories which classify the different products available on the store. The distribution of the products, have been made in four main categories (macrame, sales, new arrivals and BUSCAR CATEGORIAS); each link will display a sub-menu with more categories inside of that specific link.
+  It is mandatory to explain, the previous two navbars will be visible throughout all the website with the prupose to assure the user an easy navigation experience. The user will have the ablity tu surface faster with no need to go back to the previous page.
+  Moving on from the navbars, we can see how just below these two, there is a display of all the products available on the store at that moment. Each product display the price, name and description, image of the item, the categories the product belongs and of course, the rate If that item has one.
+  To make the navigation eassier, the user will be able to sort the search of the products by name, price, category and rate. However, rate is not working properl; definitly will be an improvement to work out in the near future.
+  If the user scroll down, a button will appear on the right corner just in the botton of the website. This control, will lead the user back to the top of the page. This button only will appear on the home page.
 2.
 ![Product Detail](/screenshots/screenshots2.png)
 ![Product Detail Review](/screenshots/screenshots3.png)
@@ -123,32 +118,6 @@ The website follow a super simple structure where we play with the contrast of n
 7.
   ![Product Review](/screenshots/screenshots10.png)
     - As we can see user can post a review of the product. And will appear on the left side of the screen. In this case admin is logged in so admin will be avialable to delete the review if admin wish to do it.
-
-
-# Testing User Stories
-
-1. As a User
-  - As a user I expect an easy navigation experience through the website. Each link with its define purpose.
-  ![Navigation](/media/screenshots/screenshots21.png)
-  As we can see at the top of the page we encounter two navs. One will display links to access bag, account options such as log in, log out, register, wishlist and if the user is admin will add an extra link with the name of **product management** wich allows admins to add products to the store.
-    * Website navigation shows simplicity at the time of surface the store. All links shows description wich will give the user a hint of what each link can do.
-  - As a user I would like to register and log in just following super simple steps.
-    * For the process of register and login I used a library that works with django called [allauth](https://www.intenct.nl/projects/django-allauth/). Wich is a open source, wich means is backed by many developers who try to create a secure and simple registration process for the user.
-  - As a user I want to have access to my previous orders and purchases.
-    * User will be able to see previous orders that they did in the past, since the store keep the purchase data, such as: items purchased, quantity of item purchased, etc..
-  - As a user I would like to be able to add, remove and check the item from my wishlist.
-    * Users will have the ability to add remove and check items on their wishlist. In case that the user doesn't have a wishlist it will appear empty, otherwise will show all products added to the user's wishlist.
-  - As a user It want to add some comments below the product to give my personal opinion.
-    * Users can add a comment to a certain product. At the moment user does not require to purchase an item to add a comment. For the future will be a feature to add to the project, since it will make more sense that only users that had been purchased an item will be able to add a comment to share their experience to others users who want to know more about the product, like the quality of the product etc..
-2. As a owner
-  - As a owner I want to assure an amazing and easy navigation experience to the user.
-    * 
-  - As a owner I have to be able to send a message notification to confirm the user he completed his registration form corrcetly.
-    * User's that has been register will recieve a message to check that the user whose trying to register is using a real email to avoid troubles.
-  - As a owner I want to have the possibility to control the hate-speech, being able to delete the post or coments If they go against the comunity rules of the website. 
-    * Owners will be able to delete reviews that they considere that are malicious or out of context or simply because they considered that certain review are not qualified for the store. Once the owner try to delete the review a small screen will pop up to confirm the delition of the review, just to be sure that the owner will delete that specific review and not another one by mistake.
-  - As a owner I need to add, edit or delete some products when they may be out of stock or sold out.
-    * Once user has made a purchase it will recieve an email to confirm the purchase with all the information of the purchase made by the user. Information will include price, delivery cost if any, quantity of items purchased, etc... 
 
 
 # Deployment
