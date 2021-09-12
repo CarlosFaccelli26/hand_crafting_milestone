@@ -80,15 +80,16 @@ As you can see all the website has a super simple structure where we play with t
 ![Product Detail](/screenshots/screenshots2.png)
 ![Product Detail Review](/screenshots/screenshots3.png)
   * First Image:
-    - Product Detail will display all the information available to a specific product. For example its name, price, description, rate, category wich products belong.
-    Also we can see a small input to adjust quantity of items if the user wants it. It won't go below 1 and won't go more than 99. Once product is updated price will adjust automatically.
-    Below that input will have two buttons one will be to go back to the products/home page and the other one will be add to the bag if the user wanst to buy that specific product.
+    - As we can see in the attached picture, once you click on a product, all details (description, name, price, category...) will be displayed.
+    Beside the image, we can see a small input to adjust quantity of items if the user decides to make a purchase. The user will be able to buy from one product to a maximum of 99 pieces. However, once the quantity of items is update, the price will adjust automatically.
+    Below that input will have two different buttons. On one hand we have a button to go back to the products/home page. On the other hand we have a button to add any product to the basket once the user take the decision to make that purchase.  
   * Second Image:
-    - The second image show us two things: First there is a form that user can fill up the give a feedback of the product. Can describe things about the product, and provide a rate to the product, wich will have five choices: Horrible, bad, good, very good, excellent.
-    Second on the left side will display all the reviews that the products has if there is any. Will display a maximum of three reviews in case that there is more reviews will paginate the reviews by 3 per page.
-    Reviews will provide the following data: User that reviewd the item, date that the review was made, content and rate.
-    Once the review is made django will calculate the rate and display the rate by stars on the product detail and products/home page, wich will give the user an idea on how good or bad is the product the the user is planning to buy.
-    If admin is currenly log in will have the ability to delete the review if admin considere that there is any reviewd that doesn't fit to the store or if there are malicious content.
+    - In this case, along the image we can see two different topics to talk about. First, we can see a form to create a review. The user will be able to fill up the form to provide a feedback about the product. Along the review, the user not only will be able to describe the product,but also he will have the posibility to value the purchase with a rate. The rate will display different options: Horrible, bad, good, very good, excellent.
+    To continue describing what we can see on the above image, we are able to appreciate how on the left side we find all the reviews if there are any. It will display a maximum of three reviews of the item per page. That means if that piece has more than three reviews, the user will need to go to the next page. 
+    Reviews will provide the following data: User that reviewd the item, date when the item was reviewd, the opinion of the user and as we mentioned before, the rate.
+    Once the review is done, Django will calculate the rate and display the result through a maximum of 5 stars. It is mandatory to say, these stars will apear beside all the products and also along the home page. The main goal of using stars instead of a number, it is to give the user an idea about the quality of the product through a visual display. 
+    Last but not least, when the admin is log in, he will be able to delete any review with the finality to avoid hate or any unrespectful review. 
+    
 3.
 ![Bag Page](/screenshots/screenshots4.png)
   - Bag page will display items that are currently on the bag of the user. Will display in a simple table all information about quantity of products, name, price, image if there is any and the subtotal.
@@ -155,14 +156,37 @@ As you can see all the website has a super simple structure where we play with t
     - Once owners tries to delete a post, a pop up will appear to ensure owners wants to delete that specific post and not make a mistake, in the following screenshots will be shown.
     - ![Delete Post Popup](/screenshots/screenshots27.png)
   - As a owner I need to be able to add, edit and delete products when they may be out of stock or sold out.
-  - As a owner I really want to assure the user an amazing navigate experience. 
-
+    * Owners will be able to add delete or edit any product that they want to. To add a product admins has to fill a form providing some specific details such as name, description, price, image if admin has one to provide. Attached will be a picture showing the form.
+    ![Add Product](/screenshots/screenshots29.png)
+    ![Add Product](/screenshots/screenshots30.png)
 
 
 # Deployment
-Project was deployed on heroku and its host on github.
+Project was deployed on heroku and its host on github. First of all create a repo on github wich will be our host to store our code, and heroku will store the full website, due heroku is capable of store backend code wich github does not.
+- ![Create a Repo](/screenshots/screenshots31.png)
+  ![Create a Repo 1](/screenshots/screenshots32.png)
+- After the repo is created we head to heroku to create an app to store our project.
+![Create App](/screenshots/screenshots33.png)
+After app is created we choose our closest region
+![Choose Region](/screenshots/screenshots34.png)
+Once the app is created we add all the necessary variables wich the project will need to run.
+![Setting Variables](/screenshots/screenshots38.png)
+Once our closest region is selected we connect our github repo with our app on heroku.
+![Connect Github](/screenshots/screenshots35.png)
+![Connect Github 1](/screenshots/screenshots36.png)
+![Connect Github 2](/screenshots/screenshots37.png)
+A note to mention, to this project we used AWS(Amazon Web Services) wich allows to host our images and static files like our css and javascript.
+Before we push our code to heroku we need to run a command on the terminal to disable collectstatic wich basically will disable all static files due Heroku does not store static files. The following command has to be run on the terminal **heroku config:set DISABLE_COLLECTSTATIC=1**.
+Once AWS is set up we can collect static running the following command: **heroku config:set DEBUG_COLLECTSTATIC=1** or just removing the variable from the heroku panel on the heroku website.
+
+**Clone Repository**
 - First of all locate our repository wich is [The ark Kingdom](https://github.com/CarlosFaccelli26/Bread-Butter-Milestone).
-- Once we find the repository, we need to create an [Heroku]() app.
+  * ![Repo](/screenshots/screenshots31.png)
+- Once we Find the repo we can copy the link and head back to our code editor
+![Copy Repo](/screenshots/screenshots39.png)
+Once Link is copied we head back to our code editor and open it. Once we are located on the terminal we can run a command to clone the repository to store in our own machine.
+![Clone Repo](/screenshots/screenshots40.png)
+![Clone Repo 1](/screenshots/screenshots41.png)
 
 # Credits
 
