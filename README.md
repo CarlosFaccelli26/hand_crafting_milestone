@@ -27,6 +27,7 @@ As you can see all the website has a super simple structure where we play with t
 
 # Technologies Used
 - Programming Lenguages
+  1. [Html]()
   2. [CSS]()
   3. [JavaScript]()
   4. [Python]()
@@ -118,6 +119,44 @@ As you can see all the website has a super simple structure where we play with t
 7.
   ![Product Review](/screenshots/screenshots10.png)
     - As we can see user can post a review of the product. And will appear on the left side of the screen. In this case admin is logged in so admin will be avialable to delete the review if admin wish to do it.
+
+
+# Testing Users Stories
+
+1. As a User
+  - As a user It will be nice to have an easy navigation experience.  Each link with its define purpose.
+    * Users will experience a nice and easy navigation due the display of both navbar wich will give a descreptive action with its respective link, making it easier for intuition for users.
+  - As a user I expect the process of registration and log in simple and easy.
+    * Proccess for registration and login is as simple to fill a form with basic details that users must provide, in the following screenshots will be explained in deep.
+      1. ![Registration](/screenshots/screenshots21.png)
+        - As we can see in the screenshot, regsitration process it will be easy for the user due simplicity and description on each field such as: username, e-mail, password. If the user fill up the fields without respecting the minimal requirements, user won't be able to register, instead will receive an error explaining what the user did wrong.
+      2. ![Registration Email](/screenshots/screenshots22.png)
+        - Once the user complete the proccess of registration, a message will be sent to the email provided. If project is running locally the email sent will be in the console however if the project is running in production email will be sent to the email provided by the user. This ensure that the user is real, because users needs to confirm the email sent to them, otherwise users won't be able to login.
+      3. ![Login](/screenshots/screenshots23.png)
+        - Similar process will be required by users to login. Users must fill up the fileds required on the page with the information previous given; in this case username and password. If user wants to save the credentials to login they can thanks to the small box below the two inputs with the label of **Remember me** wich will save the info provided by the user making it easier to users in this process.
+  - As a user I would like to be able to see the record of my previous purchases.
+    * Users once they made a purchase will be able to see the details of that orders, or in case that users made previous orders they will be able to see previous orders and its details.
+      1. ![Previous Orders](/screenshots/screenshots24.png)
+        - As we can see in the screenshot users are able to see details of the purchase such as name of the product, quantity, delivery cost if any, subtotal, total, etc...
+        Tihs invoice will give the user all the details about the purchase that they just made. 
+  - As a user I want to have the possibility to add, remove or read items being in my wishlist.
+    * Add items to wishlist is a must have in any e-commerce, because allows the user to add items that they're insterested in, wich allows user to not be wasting time looking an item each time that users open the browser. Something to keep in mind is that only authenticated users are able to add or remove items from the wishlist
+  - As a user It will be a good option to be able to add a coment below the products.
+    * Process of adding a review is simple as a filling a simple form wich will take less than a minute. Though is missing some functionallity wich in the future will be improve such the ability that only authenticated usuers who made a pruchase of that specific product can post a review. At the moment any authenticated user are able to post a review, wich is not quite right, but as I wrote before this will be a feature to add in the coming future.
+2. As a owner
+  - As a owner It will be mandatory to be able to send messages once the user finish the registration form to confirm the procedure.
+    * ![Email Registration Website](/screenshots/screenshots25.png)
+      - As we can see using the project in production wich will send an email to the email provided by the user, in this case I use a temporarily email. Once a finished the process of registration that message will be received by the user. To confirm that the user registered in the website will appear a link to confirm the registration proccess. Wich will allow the user to login.
+      - However if project is running locally confrimation e-mail will be sent to the console like in the following screenshots:
+      - ![Email Registration Console](/screenshots/screenshots28.png)
+  - As a owner I would like to have the posibility to delete any post contained of hate-speech, or inappropiate content.
+    * ![Delete Post](/screenshots/screenshots26.png)
+    - Owners will be able to delete post wich with their judgement considered that post are malicious or contains some sort of bad language.
+    - Once owners tries to delete a post, a pop up will appear to ensure owners wants to delete that specific post and not make a mistake, in the following screenshots will be shown.
+    - ![Delete Post Popup](/screenshots/screenshots27.png)
+  - As a owner I need to be able to add, edit and delete products when they may be out of stock or sold out.
+  - As a owner I really want to assure the user an amazing navigate experience. 
+
 
 
 # Deployment
