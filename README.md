@@ -105,20 +105,20 @@ As you can see all the website has a super simple structure where we play with t
     
 3.
 ![Bag Page](/screenshots/screenshots4.png)
-  - Bag page will display items that are currently on the bag of the user. Will display in a simple table all information about quantity of products, name, price, image if there is any and the subtotal.
-  Users can adjust quantity of items that they want to purchase if the wish to do it, the price will adjust automatically.
-  Below the table we can see a few lines wich will describe subtotal, delivery cost, grand total and a warning text providing information about user if it has free delivery or it needs to add more products to theirs bag to get a free delivery on the purchase.
-  Finally we can see two buttons, one will be to go back to the main page and the last one will lead the user to the secure payment.
+  - Bag page, as we can see in the picture, will display all the items that the user move into his purchase basket. All the details and information about the purchase have been collected in a simple table Where we can see quantity of products, name of the items, price of each piece, image if there is any and of course the subtotal of the purchase. 
+ As we mentioned before, If the users change the amount of items they are buying, the final price will adjust automatically. 
+ However,just below the table we can see a few lines with the detailed description of the subtotal, delivery cost, grand total and a warning text to provide some information to the user; for example: the user is suitable to get free delivery, or the user will be able to avoid delivery feed if he add more products to his basket. 
+  As in the previous pages, at the end of the page we will find two buttons, one to go back to the main page; meanwhile the other one will lead the user to a secure payment procedure. 
 4.
 ![Secure Payment](/screenshots/screenshots5.png)
 ![Secure Payment Second](/screenshots/screenshots6.png)
   - Secure Payment
-    * First image show us the template wich will prodive the user the ability to make the purchase of the item.
-    Will have a form on the left and on the right a small preview of the items that user is going to buy.
-    The form will ask for information about the user such as: email, phone number, country, county, street address and postal code.
-    * Second Image, show the input to put the credit card and cvc number. The only card number that is working due stripe is used on test mode is **4242 4242 4242 4242** the user can improvised on those two inputs.
-    If the user is not logged in, user won't be able to save deliveries information for future purchases.
-    Finally we have buttons wich one of the will lead us to bag page in wich user can adjust its bag in case that user wish to adjust the bag, otherwise user can follow to the purchase and end the purchase procedure.
+    Along this first image, we can see the template the user will need to follow if he wants to confirm and complete the purchase.
+   Not only we have a form on the left, but also we can find a small preview of the items being purchased on the right. 
+    The form will be asking for user's contact details as email adress, phone number, country, and of course name of the road, county and the postal code. 
+    * Last but not least, in the second image, we can see the input showed to the user, where he needs to introduce his payment method (credit card number, cvc, and expiration date). As this is a project, the only card number working at the moment, due stripe  used on test mode is **4242 4242 4242 4242** however, when the project will be tested, expiration date and cvc will be up to the user testing the website. 
+    Needless to say, If the user is not logged in, the deliveries detailes will not be save for the future purchases.
+    To sum up, we can see as well two different buttons. The first button will lead the user to the bag page where there is the posibbility to adjust the purchase details (amount of products) The second button will bring the purchase to the end; the user will accept the purchase and finally pay the products. 
 5.
 ![Checkout](/screenshots/screenshots7.png)
   - Once the user had finally made the purchase, the store will send a message to the user with all the information relative to the purchase. As well we can see on the page all the information about the purchase such as the order number, price, delivery information and billing info.
