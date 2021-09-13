@@ -64,8 +64,21 @@ As you can see all the website has a super simple structure where we play with t
     - Base css ![View](/screenshots/screenshots19.png)
     - Checkout css ![View](/screenshots/screenshots20.png)
 
-  - JS: [View]()
-  - Python: [View]()
+  - JS: 
+    - ![Add Product](/screenshots/screenshots42.png)
+    - ![Products](/screenshots/screenshots43.png)
+    - ![Bag](/screenshots/screenshots44.png)
+    - ![Country Field](/screenshots/screenshots45.png)
+    - ![Stripe](/screenshots/screenshots46.png)
+
+  - Python:
+    - ![Checkout](/screenshots/screenshots47.png)
+    - ![Profile](/screenshots/screenshots48.png)
+    - ![Products](/screenshots/screenshots49.png)
+    - ![Bag Context](/screenshots/screenshots50.png)
+    - ![Webhook Handler](/screenshots/screenshots51.png)
+    - ![Webhook](/screenshots/screenshots52.png)
+    - ![Bag](/screenshots/screenshots53.png)
 
 - Screenshots
 1.
