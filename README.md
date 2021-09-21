@@ -138,16 +138,9 @@ As you can see all the website has a super simple structure where we play with t
 # Testing Users Stories
 
 1. As a User
- 
-2. As a owner
-  - As a owner It will be mandatory to be able to send messages once the user finish the registration form to confirm the procedure.
-  - As a owner I would like to have the posibility to delete any post contained of hate-speech, or inappropiate content. 
-  - As a owner I need to be able to add, edit and delete products when they may be out of stock or sold out.
-  - As a owner I really want to assure the user an amazing navigate experience. 
-
-
   - As a user It will be nice to have an easy navigation experience. 
     * Users will experience a nice and easy navigation due the display of the website. The project it is very intuitve as both navbars give different options allowing the user navigate throught several links being able to surf the website after some clicks.
+    
   - As a user I expect the process of registration and log in simple and easy.
     *The procedures that the user needs to follow to registrate and login are quite easy as it will be just necesary to fill a form with basic details of the user (username, email, pasword...). You can find some screenshots attached below, where we explained the procedures deeply. 
       1. ![Registration](/screenshots/screenshots21.png)
@@ -156,32 +149,39 @@ As you can see all the website has a super simple structure where we play with t
         - Once the user complete the proccess of registration, a message will be sent to the email provided. However, if the  project is running locally, the email sent will be in the console. Meanwhile, If the project is running in production, the mentioned email will be sent to the email adress provided by the user. Thanks to this procedures, we will be able to verify if the user is real, at the same time, the user will need to confirm the email, otherwise users won't be able to login.
       3. ![Login](/screenshots/screenshots23.png)
         - As we explained before, a very similar process will be required by users to login. Users must fill up the fields with the information required, which was given before when the user registered himself (username and password). If the user wants to save the credentials to login they can click on the small box below the two inputs, the name of the box is **Remember me**. Once the user select that option, all the information provided by the user will be save straigh away making easier the procedures. 
+
   - As a user I would like to be able to see the record of my previous purchases.
     * If the user made a purchase, it will have the option to see the details of that order. However, the user will have access to all the information from previous orders.
       1. ![Previous Orders](/screenshots/screenshots24.png)
         - As we mentioned before, all the users are able to see purchase details. As you can see in the screenshot, some of the details are: name of the product, quantity, delivery cost if any, subtotal, total, etc...
         The main goal of this invoice is to give the maximun amount of information at once to the user. 
+
   - As a user I want to have the possibility to add, remove or read items being in my wish list.
     * Needless to say, add items to a wish list is a must have in any e-commerce. Because of that we take this in consideration along the project. The user will be able to add his fauvourites items that he might buy in the future. Thanks to the wish list the uer can have a record of the products and it will not have the need to research them again when that user open the browser. However, something to keep in mind is that only authenticated users are able to add or remove items from the wish list as we mentioned before.
+
   - As a user It will be a good option to be able to add a coment below the products.
     *Following the main goal of creating a website with an easy navigation, add a review is not any different. The user will need to fill a simple form.  However, there is a missing functionallity: just authenticated users after made a purchase will be able to add a review, at the moment, everybody can do it. In future projects it will be something to improve as it is not following any logic that  aleatory people have the posibility to add a review. 
     
 2. As a owner
   - As a owner It will be mandatory to be able to send messages once the user finish the registration form to confirm the procedure.
-    * ![Email Registration Website](/screenshots/screenshots25.png)
-      - As we can see using the project in production wich will send an email to the email provided by the user, in this case I use a temporarily email. Once a finished the process of registration that message will be received by the user. To confirm that the user registered in the website will appear a link to confirm the registration proccess. Wich will allow the user to login.
-      - However if project is running locally confrimation e-mail will be sent to the console like in the following screenshots:
+  * ![Email Registration Website](/screenshots/screenshots25.png)
+    As we explained before, when the project is being used in production the user will recieve the confirmation email straigh away into the email adress provided. As this project is a demo It will work with any temporarily email. Once the user got the confirmation email after registered, it will be mandatory to click on the link to finish the regustration process. From no on the user will be able to log in. 
+    However, as we can see in the screenshot; if the project is running locally, the confrimation e-mail will be sent to the console instead of the email adress provided.
       - ![Email Registration Console](/screenshots/screenshots28.png)
+
   - As a owner I would like to have the posibility to delete any post contained of hate-speech, or inappropiate content.
     * ![Delete Post](/screenshots/screenshots26.png)
-    - Owners will be able to delete post wich with their judgement considered that post are malicious or contains some sort of bad language.
-    - Once owners tries to delete a post, a pop up will appear to ensure owners wants to delete that specific post and not make a mistake, in the following screenshots will be shown.
+    - Owners will be able to delete any review if they consider there are some hate, innapropiate language or irrelevant information about the product and website. 
+    - As wen can see in the below picture, when the owner of the website delete a review, a pop up will appear to confirm this action. Thanks to this control the owner will avoid any possible mistakes.
     - ![Delete Post Popup](/screenshots/screenshots27.png)
+
   - As a owner I need to be able to add, edit and delete products when they may be out of stock or sold out.
-    * Owners will be able to add delete or edit any product that they want to. To add a product admins has to fill a form providing some specific details such as name, description, price, image if admin has one to provide. Attached will be a picture showing the form.
+    * Owners need to have the control of their own website, because of that we want to give them the posibility to add delete or edit any product. To add a product admins has to fill a form providing a proper description of the item. Not only it wiill be essential to describe the product, but also the owner will need to give a name and a price to the product at the same time he add a picture of it. Pictures attached below.
     ![Add Product](/screenshots/screenshots29.png)
     ![Add Product](/screenshots/screenshots30.png)
-
+    
+-  As a owner I really want to assure the user an amazing navigate experience. 
+ As we explained before, the owner wants to give the perfect service to the user, because of that an easy navigation is elemental. The display of the website makes the navigation experience pretty intuitive and simple for the user. In every moment the user will be able to surf the website just with some clicks moving from one link to another one. 
 
 # Deployment
 Project have been deployed on heroku and it is host on github. First of all, you will need to create a repo on github wich will be our host to store our code, meanwhile heroku will store the full website as heroku is capable of store backend code wich github does not.
