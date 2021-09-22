@@ -1,6 +1,6 @@
 Hello {{ order.full_name }}!
 
-This is a confirmation of your order at The Art Kingdom. Your Order information is bellow:
+This is a confirmation of your order at Sophie's Treasures. Your Order information is bellow:
 
 Order Total: ${{ order.order_total }}
 Delivery: ${{ order.delivery_cost }}

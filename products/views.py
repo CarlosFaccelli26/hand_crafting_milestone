@@ -86,7 +86,7 @@ def review(request, product_id):
 
     product = Product.objects.get(pk=product_id)
     reviews = ProductReview.objects.filter(product=product_id)
-    user_review = ProductReview.objects.filter(user=request.user)
+    user_review = ProductReview.objects.filter(product=product_id)
     user = request.user
     if request.method == 'POST':
         #  Check if username has review on certain product
