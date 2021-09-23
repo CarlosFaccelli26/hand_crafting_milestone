@@ -22,8 +22,19 @@ As you can see all the website has a super simple structure where we play with t
 2. Typography
   - Main font have been used along this project is, Poppins.
 3. Wireframs
-  - Desktop - [View]()
-  - Mobile - [View]()
+  - Wishlist Desktop - ![View](/screenshots/wishlist-desktop.png)
+  - Order History Desktop - ![View](/screenshots/order-history-desktop.png)
+  - Products Detail Desktop - ![View](/screenshots/products-detail-desktop.png)
+  - Bag Desktop - ![View](/screenshots/bag-desktop.png)
+  - Checkout Desktop - ![View](/screenshots/checkout-desktop.png)
+  - Products Desktop - ![View](/screenshots/products-desktop.png)
+  - Profile Desktop - ![View](/screenshots/profile-desktop.png)
+  - Secure Checkout Mobile - ![View](/screenshots/secure-checkout.png)
+  - Wishlist Mobile - ![View](/screenshots/wishlist.png)
+  - Products Mobile - ![View](/screenshots/products.png)
+  - Products Detail Mobile - ![View](/screenshots/products-detail.png)
+  - Checkout success Mobile - ![View](/screenshots/checkout-success.png)
+  - Bag Mobile - ![View](/screenshots/bag.png)
 
 # Technologies Used
 - Programming Lenguages and Frameworks
@@ -61,7 +72,7 @@ As you can see all the website has a super simple structure where we play with t
     - Wish List ![View](/screenshots/screenshots14.png)
     - Order History ![View](/screenshots/screenshots16.png)
     - Add Product ![View](/screenshots/screenshots17.png)
-    - Edit Product ![View](/sreenshots/screenshots18.png)
+    - Edit Product ![View](/screenshots/screenshots18.png)
   - CSS:
     - Base css ![View](/screenshots/screenshots19.png)
     - Checkout css ![View](/screenshots/screenshots20.png)
