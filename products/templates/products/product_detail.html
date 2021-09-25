@@ -134,7 +134,7 @@
             {% if reviews %}
             {% for review in page_obj %}
                 <div class="w-75 mx-auto p-1">
-                    <p class="text-muted text-truncate"><strong>Message:</strong> {{ review.content }}</p>
+                    <p class="text-muted"><strong>Message:</strong> {{ review.content }}</p>
                     <p class="text-muted"><strong>Rate:</strong> {{ review.rate }} / 5</p>
                     <small class="text-muted"><strong>Product:</strong> {{ review.product }}</small><br>
                     <small class="text-muted"><strong>Date:</strong> {{ review.date }}</small><br>
