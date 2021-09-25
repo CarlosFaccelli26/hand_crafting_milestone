@@ -286,3 +286,5 @@ All products images have been taking by my grilfriend Sophie as all the pieces h
 Base project was build with the walkthrough project provided by [Code Institute](https://codeinstitute.net/)
 
 I need to thank my mentor [Rahul Lakhanpal](https://codeinstitute.net/)
+
+To all slack community wich help me through the project
