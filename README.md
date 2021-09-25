@@ -32,9 +32,13 @@ As you can see all the website has a super simple structure where we play with t
   - Secure Checkout Mobile - ![View](/screenshots/secure-checkout.png)
   - Wishlist Mobile - ![View](/screenshots/wishlist.png)
   - Products Mobile - ![View](/screenshots/products.png)
-  - Products Detail Mobile - ![View](/screenshots/products-detail.png)
+  - Products Detail Mobile - ![View](/screenshots/product-detail.png)
   - Checkout success Mobile - ![View](/screenshots/checkout-success.png)
   - Bag Mobile - ![View](/screenshots/bag.png)
+
+# Data Base
+  * Find attached image the scheme of the database.
+  - ![Database](/screenshots/database.jpg)
 
 # Technologies Used
 - Programming Lenguages and Frameworks
@@ -202,6 +206,8 @@ Project have been deployed on heroku and it is host on github. First of all, you
 ![Create App](/screenshots/screenshots33.png)
 Once the app has been created we choose our closest region.
 ![Choose Region](/screenshots/screenshots34.png)
+After the region is choosed, we need to head to the resource section of the heroku website and choose our postgres database, which will host of all database for our project. Find attached the following picture describing the proccess
+![Postgres](/screenshots/screenshots54.png)
 We will need to add all the necessary variables in the created app. Thanks to this variables, the project will run properly. 
 ![Setting Variables](/screenshots/screenshots38.png)
 Once our closest region is selected we connect our github repo with our app on heroku.
